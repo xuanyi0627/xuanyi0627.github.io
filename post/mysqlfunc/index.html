@@ -39,9 +39,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91">交叉编译</a></li>
-<li><a href="#centos%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%8E%8Bgolang">CentOS下载解压Golang</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83">配置环境</a></li>
+<li><a href="#%E8%BD%AC%E5%8F%98%E8%A1%A8character">转变表CHARACTER</a></li>
+<li><a href="#%E8%BD%AC%E5%8F%98%E5%AD%97%E6%AE%B5character">转变字段CHARACTER</a></li>
 </ul>
 </li>
 </ul>
@@ -92,66 +91,46 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">Golang 技巧汇总</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">MySQL 常用方法</h1>
         <div class="text-sm text-gray-700 lg:my-8">
           2019-09-18 / 1 min read
         </div>
         
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://blog.exgame.club/post-images/golang.png" alt="">
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://blog.exgame.club/post-images/mysqlfunc.png" alt="">
         
         <div class="post-content yue">
-          <h3 id="交叉编译">交叉编译</h3>
-<pre><code>CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go install version_pro.go
+          <h3 id="转变表character">转变表CHARACTER</h3>
+<pre><code>ALTER TABLE tb_partner DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 </code></pre>
-<h3 id="centos下载解压golang">CentOS下载解压Golang</h3>
-<pre><code>wget https://storage.googleapis.com/golang/go1.10.linux-amd64.tar.gz
-tar -zxvf go1.8.linux-amd64.tar.gz -C /usr/local
-</code></pre>
-<h3 id="配置环境">配置环境</h3>
-<pre><code>sudo vim /etc/profile
-
-export GOROOT=/usr/local/go 
-export GOPATH=/home/ubuntu/webgo
-export PATH=$GOROOT/bin:$PATH
-export GOBIN=/home/ubuntu/webgo/bin
-
-source /etc/profile
+<h3 id="转变字段character">转变字段CHARACTER</h3>
+<pre><code>ALTER TABLE tb_partner MODIFY COLUMN telephone VARCHAR(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 </code></pre>
 
         </div>
 
         
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://blog.exgame.club/tag/EKwvvsrEg">
+            <span class="flex-auto">database</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://blog.exgame.club/tag/Tl9b45acZ2">
+            <span class="flex-auto">mysql</span>
+          </a>
+        
           <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://blog.exgame.club/tag/6FfljOb5o">
             <span class="flex-auto">develop</span>
-          </a>
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://blog.exgame.club/tag/PZjmc1MYG0">
-            <span class="flex-auto">server</span>
-          </a>
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://blog.exgame.club/tag/zLd4aCp2Jj">
-            <span class="flex-auto">Go</span>
           </a>
         
 
 
         <div class="flex justify-between py-8">
           
-            <div class="prev-post">
-              <a href="http://blog.exgame.club/post/mysqlinstall">
-                <h3 class="post-title">
-                  <i class="remixicon-arrow-left-line"></i>
-                  MySQL 安装配置
-                </h3>
-              </a>
-            </div>
-          
 
           
             <div class="next-post">
-              <a href="http://blog.exgame.club/post/nginx">
+              <a href="http://blog.exgame.club/post/mysqlinstall">
                 <h3 class="post-title">
-                  Nginx 1.14 
+                  MySQL 安装配置
                   <i class="remixicon-arrow-right-line"></i>
                 </h3>
               </a>

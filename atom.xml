@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2019-09-18T08:35:34.715Z</updated>
+    <updated>2019-09-18T08:42:48.752Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.exgame.club"/>
     <link rel="self" href="http://blog.exgame.club/atom.xml"/>
@@ -10,6 +10,63 @@
     <logo>http://blog.exgame.club/images/avatar.png</logo>
     <icon>http://blog.exgame.club/favicon.ico</icon>
     <rights>All rights reserved 2019, Matrix</rights>
+    <entry>
+        <title type="html"><![CDATA[MySQL 常用方法]]></title>
+        <id>http://blog.exgame.club/post/mysqlfunc</id>
+        <link href="http://blog.exgame.club/post/mysqlfunc">
+        </link>
+        <updated>2019-09-18T08:41:19.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="转变表character">转变表CHARACTER</h3>
+<pre><code>ALTER TABLE tb_partner DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+</code></pre>
+<h3 id="转变字段character">转变字段CHARACTER</h3>
+<pre><code>ALTER TABLE tb_partner MODIFY COLUMN telephone VARCHAR(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MySQL 安装配置]]></title>
+        <id>http://blog.exgame.club/post/mysqlinstall</id>
+        <link href="http://blog.exgame.club/post/mysqlinstall">
+        </link>
+        <updated>2019-09-18T08:35:59.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="系统">系统</h3>
+<blockquote>
+<p>CentOS7.x</p>
+</blockquote>
+<h3 id="安装">安装</h3>
+<pre><code>yum install mysql
+
+yum install mysql-devel
+
+wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
+yum install mysql-community-server
+</code></pre>
+<h3 id="启动mysql">启动MySQL</h3>
+<pre><code>service mysqld restart
+</code></pre>
+<h3 id="设置用户和密码">设置用户和密码</h3>
+<pre><code>mysql -u root
+set password for 'root'@'localhost' =password('8sIjjbzAxWSsC65A');
+</code></pre>
+<h3 id="修改配置文件">修改配置文件</h3>
+<blockquote>
+<p>mysql配置文件为/etc/my.cnf</p>
+</blockquote>
+<h3 id="加上编码配置">加上编码配置</h3>
+<pre><code>default-character-set =utf8
+</code></pre>
+<h3 id="远程连接">远程连接</h3>
+<pre><code>mysql&gt; grant all privileges on *.* to server@'%'identified by '8sIjjbzAxWSsC65A';
+</code></pre>
+<h3 id="创建新用户">创建新用户</h3>
+<pre><code>mysql&gt;create user 'server'@'%' identified by '8sIjjbzAxWSsC65A';
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Golang 技巧汇总]]></title>
         <id>http://blog.exgame.club/post/golang</id>
