@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2019-09-18T08:11:44.055Z</updated>
+    <updated>2019-09-18T08:23:24.177Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.exgame.club"/>
     <link rel="self" href="http://blog.exgame.club/atom.xml"/>
@@ -11,35 +11,77 @@
     <icon>http://blog.exgame.club/favicon.ico</icon>
     <rights>All rights reserved 2019, Matrix</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>http://blog.exgame.club/post/hello-gridea</id>
-        <link href="http://blog.exgame.club/post/hello-gridea">
+        <title type="html"><![CDATA[Supervisor为Go守护进程]]></title>
+        <id>http://blog.exgame.club/post/supervisorgo</id>
+        <link href="http://blog.exgame.club/post/supervisorgo">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2019-09-18T08:12:32.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="系统">系统</h3>
+<p>CentOS7.x</p>
+<h3 id="步骤">步骤</h3>
+<ol>
+<li>切换用户为root</li>
+</ol>
+<pre><code class="language-shell"># sudo su - #切换为root用户
+</code></pre>
+<ol start="2">
+<li>安装</li>
+</ol>
+<pre><code># yum install epel-release
+# yum install -y supervisor
+# systemctl enable supervisord # 开机自启动
+# systemctl start supervisord # 启动supervisord服务
+
+# systemctl status supervisord # 查看supervisord服务状态
+# ps -ef|grep supervisord # 查看是否存在supervisord进程
+</code></pre>
+<ol start="3">
+<li>创建supervisor所需目录</li>
+</ol>
+<pre><code># mkdir /etc/supervisord.d/
+</code></pre>
+<ol start="4">
+<li>创建supervisor配置文件</li>
+</ol>
+<pre><code># echo_supervisord_conf &gt; /etc/supervisord.conf
+</code></pre>
+<ol start="5">
+<li>编辑supervisord.conf文件</li>
+</ol>
+<pre><code>[include]
+files = /etc/supervisord.d/*.ini
+</code></pre>
+<ol start="6">
+<li>启动supervisor</li>
+</ol>
+<pre><code># supervisord -c /etc/supervisord.conf
+</code></pre>
+<ol start="7">
+<li>重启ERROR</li>
+</ol>
+<blockquote>
+<p>Error: Another program is already listening on a port that one of our HTTP servers is configured to use. Shut this program down first before starting</p>
+</blockquote>
+<pre><code>find / -name supervisor.sock
+unlink /tmp/supervisor.sock
+</code></pre>
+<ol start="8">
+<li>*.ini 文件模板</li>
+</ol>
+<pre><code>[program:server_version]
+command=/usr/local/gopath/bin/version_pro
+autostart=true
+autorestart=true
+startsecs=10
+stdout_logfile=/var/log/supervisord/version.log
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=10
+stdout_capture_maxbytes=1MB
+stderr_logfile=/var/log/supervisord/version.log
+stderr_logfile_maxbytes=1MB
+stderr_logfile_backups=10
+stderr_capture_maxbytes=1MB
+</code></pre>
 ]]></content>
     </entry>
 </feed>
