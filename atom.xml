@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2019-09-18T08:23:24.177Z</updated>
+    <updated>2019-09-18T08:30:03.948Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.exgame.club"/>
     <link rel="self" href="http://blog.exgame.club/atom.xml"/>
@@ -11,13 +11,63 @@
     <icon>http://blog.exgame.club/favicon.ico</icon>
     <rights>All rights reserved 2019, Matrix</rights>
     <entry>
+        <title type="html"><![CDATA[Nginx 1.14 ]]></title>
+        <id>http://blog.exgame.club/post/nginx</id>
+        <link href="http://blog.exgame.club/post/nginx">
+        </link>
+        <updated>2019-09-18T08:25:32.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="系统">系统</h3>
+<blockquote>
+<p>CentOS7.x</p>
+</blockquote>
+<h3 id="准备工作">准备工作</h3>
+<pre><code>yum install -y gcc
+
+yum install -y pcre pcre-devel
+
+yum install -y zlib zlib-devel
+
+yum install -y openssl openssl-devel
+</code></pre>
+<h3 id="安装nginx">安装Nginx</h3>
+<pre><code>wget http://nginx.org/download/nginx-1.14.2.tar.gz
+tar -zxvf nginx-1.14.0.tar.gz
+cd nginx-1.14.0/
+</code></pre>
+<pre><code>./configure --prefix=/usr/local/nginx --pid-path=/run/nginx.pid  --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log  --with-http_ssl_module --with-http_v2_module --with-http_stub_status_module --with-pcre
+</code></pre>
+<pre><code>make
+make install
+</code></pre>
+<h3 id="安装目录">安装目录</h3>
+<blockquote>
+<p>默认Nginx安装在/usr/local/nginx/中</p>
+</blockquote>
+<h3 id="常用命令">常用命令</h3>
+<pre><code>/usr/local/nginx/sbin/nginx #默认启动方式 start
+
+/usr/local/nginx/sbin/nginx -t #测试配置信息
+
+/usr/local/nginx/sbin/nginx -v #显示版本信息，-V（大V）显示编译时的参数
+
+/usr/local/nginx/sbin/nginx -s stop #快速停止服务
+
+/usr/local/nginx/sbin/nginx -s quit #正常停止服务 
+
+/usr/local/nginx/sbin/nginx -s reload #重启
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Supervisor为Go守护进程]]></title>
         <id>http://blog.exgame.club/post/supervisorgo</id>
         <link href="http://blog.exgame.club/post/supervisorgo">
         </link>
         <updated>2019-09-18T08:12:32.000Z</updated>
         <content type="html"><![CDATA[<h3 id="系统">系统</h3>
+<blockquote>
 <p>CentOS7.x</p>
+</blockquote>
 <h3 id="步骤">步骤</h3>
 <ol>
 <li>切换用户为root</li>

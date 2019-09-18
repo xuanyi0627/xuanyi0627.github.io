@@ -31,34 +31,25 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            业精于勤
+            文章目录
           </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/xuanyi0627" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E7%B3%BB%E7%BB%9F">系统</a></li>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85nginx">安装Nginx</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">安装目录</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">常用命令</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
           </div>
         </div>
       
@@ -102,51 +93,119 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-line"></i> server
-        </h2>
-        
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-      <a href="http://blog.exgame.club/post/nginx" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://blog.exgame.club/post-images/nginx.png'">
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Nginx 1.14 </h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-09-18 / 1 min read
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="http://blog.exgame.club/post/nginx">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Nginx 1.14 </h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
         
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-09-18 / 1 min read</div>
-    </div>
-  </section>
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://blog.exgame.club/post-images/nginx.png" alt="">
+        
+        <div class="post-content yue">
+          <h3 id="系统">系统</h3>
+<blockquote>
+<p>CentOS7.x</p>
+</blockquote>
+<h3 id="准备工作">准备工作</h3>
+<pre><code>yum install -y gcc
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-    
-      <a href="http://blog.exgame.club/post/supervisorgo" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://blog.exgame.club/post-images/supervisorgo.jpg'">
+yum install -y pcre pcre-devel
+
+yum install -y zlib zlib-devel
+
+yum install -y openssl openssl-devel
+</code></pre>
+<h3 id="安装nginx">安装Nginx</h3>
+<pre><code>wget http://nginx.org/download/nginx-1.14.2.tar.gz
+tar -zxvf nginx-1.14.0.tar.gz
+cd nginx-1.14.0/
+</code></pre>
+<pre><code>./configure --prefix=/usr/local/nginx --pid-path=/run/nginx.pid  --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log  --with-http_ssl_module --with-http_v2_module --with-http_stub_status_module --with-pcre
+</code></pre>
+<pre><code>make
+make install
+</code></pre>
+<h3 id="安装目录">安装目录</h3>
+<blockquote>
+<p>默认Nginx安装在/usr/local/nginx/中</p>
+</blockquote>
+<h3 id="常用命令">常用命令</h3>
+<pre><code>/usr/local/nginx/sbin/nginx #默认启动方式 start
+
+/usr/local/nginx/sbin/nginx -t #测试配置信息
+
+/usr/local/nginx/sbin/nginx -v #显示版本信息，-V（大V）显示编译时的参数
+
+/usr/local/nginx/sbin/nginx -s stop #快速停止服务
+
+/usr/local/nginx/sbin/nginx -s quit #正常停止服务 
+
+/usr/local/nginx/sbin/nginx -s reload #重启
+</code></pre>
+
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="http://blog.exgame.club/post/supervisorgo">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Supervisor为Go守护进程</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-09-18 / 1 min read</div>
-    </div>
-  </section>
 
-        <div class="pagination-container animated fadeIn">
-  
-  
-</div>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://blog.exgame.club/tag/cIEBzjD2_">
+            <span class="flex-auto">nginx</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://blog.exgame.club/tag/6FfljOb5o">
+            <span class="flex-auto">develop</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://blog.exgame.club/tag/PZjmc1MYG0">
+            <span class="flex-auto">server</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://blog.exgame.club/tag/BbAwyljziN">
+            <span class="flex-auto">运维</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+            <div class="next-post">
+              <a href="http://blog.exgame.club/post/supervisorgo">
+                <h3 class="post-title">
+                  Supervisor为Go守护进程
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'c1b428a49429b4dd4fb0',
+    clientSecret: 'f6d21ac76c4593a4b8baa3a5a7ba94e56cfb1ca1',
+    repo: 'xuanyi0627.github.io',
+    owner: 'xuanyi0627',
+    admin: ['xuanyi0627'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
       </div>
     </div>
