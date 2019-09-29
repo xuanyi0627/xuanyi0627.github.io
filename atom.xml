@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2019-09-29T02:13:04.905Z</updated>
+    <updated>2019-09-29T06:04:21.468Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.exgame.club"/>
     <link rel="self" href="https://blog.exgame.club/atom.xml"/>
@@ -17,7 +17,7 @@
         </link>
         <updated>2019-09-29T01:06:06.000Z</updated>
         <content type="html"><![CDATA[<h3 id="官网">官网</h3>
-<p>[https://taro.aotu.io/]（https://taro.aotu.io/）</p>
+<p><a href="https://taro.aotu.io/">https://taro.aotu.io/</a></p>
 <h3 id="安装">安装</h3>
 <pre><code class="language-shell">$ yarn global add @tarojs/cli
 </code></pre>
