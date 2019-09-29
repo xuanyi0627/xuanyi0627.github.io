@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2019-09-29T01:18:42.752Z</updated>
+    <updated>2019-09-29T01:19:43.957Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.exgame.club"/>
     <link rel="self" href="https://blog.exgame.club/atom.xml"/>
@@ -68,7 +68,7 @@
 <li>config - 配置文件</li>
 <li>src - 资源文件</li>
 </ul>
-<h3 id="编译">编译</h3>
+<h3 id="编译和打包">编译和打包</h3>
 <ul>
 <li>微信小程序编译预览及打包</li>
 </ul>
