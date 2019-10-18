@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2019-09-29T06:06:52.967Z</updated>
+    <updated>2019-10-18T09:17:53.502Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.exgame.club"/>
     <link rel="self" href="https://blog.exgame.club/atom.xml"/>
@@ -11,9 +11,110 @@
     <icon>https://blog.exgame.club/favicon.ico</icon>
     <rights>All rights reserved 2019, Matrix</rights>
     <entry>
+        <title type="html"><![CDATA[Taro前置内容和生命周期]]></title>
+        <id>https://blog.exgame.club/post/tarojs-react</id>
+        <link href="https://blog.exgame.club/post/tarojs-react">
+        </link>
+        <updated>2019-10-18T08:00:30.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="前置技能">前置技能</h3>
+<blockquote>
+<p>React</p>
+</blockquote>
+<h3 id="indexjsx">index.jsx</h3>
+<p>进入<code>src/pages/index/index.jsx</code>这个文件，然后让我们好好看看这个文件里的内容。</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/10/18/mBvHWaz6XnZry2o.png" alt="index.jsx"></figure>
+<p>这是一份无添加的样式。我们看到里面的内容包括：</p>
+<ul>
+<li>行1-3的引用</li>
+<li>行5声明一个class</li>
+<li>行7-9设置这个页面的title（用于小程序）</li>
+<li>行11-19生命周期</li>
+<li>行21-28，一个render函数（学过React的都知道）
+<ul>
+<li>View和Text都是Taro的组件，相当于原来的div和span。（你可以这么理解一下）</li>
+</ul>
+</li>
+</ul>
+<p>这个是运行结果</p>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2019/10/18/BCJ59jNPDlspw3F.png" alt="运行结果"></figure>
+<h3 id="生命周期">生命周期</h3>
+<p><a href="https://nervjs.github.io/taro/docs/tutorial.html#componentwillmount">快速查看</a></p>
+<pre><code class="language-javascript">componentWillMount () {
+    console.log('componentWillMount')
+    console.log('监听程序初始化，初始化完成时触发（全局只触发一次）')
+    console.log('在此生命周期中通过 this.$router.params，可以访问到程序初始化参数')
+    console.log('在微信/百度/字节跳动/支付宝小程序中这一生命周期方法对应 app 的 onLaunch')
+  }
+
+  componentDidMount () {
+    console.log('componentDidMount')
+    console.log('监听程序初始化，初始化完成时触发（全局只触发一次）')
+    console.log('在此生命周期中也可以通过 this.$router.params，访问到程序初始化参数')
+    console.log('在微信/百度/字节跳动/支付宝小程序中这一生命周期方法对应 app 的 onLaunch，在 componentWillMount 后执行')
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('componentWillReceiveProps')
+    console.log('已经装载的组件接收到新属性前调用')
+    console.log('在组件接收到一个新的 prop (更新后)时被调用。这个方法在初始化render时不会被调用')
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate')
+    console.log('组件是否需要更新，返回 false 不继续更新，否则继续走更新流程')
+    console.log('返回一个布尔值。在组件接收到新的props或者state时被调用。在初始化时或者使用forceUpdate时不被调用')
+    return true
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log('componentWillUpdate')
+    console.log('在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用')
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate')
+    console.log('在组件完成更新后立即调用。在初始化时不会被调用')
+  }
+
+  componentWillUnmount () {
+    console.log('componentWillUnmount')
+    console.log('组件卸载时触发')
+    console.log('在组件从 DOM 中移除之前立刻被调用')
+  }
+
+  componentDidShow () {
+    console.log('componentDidShow')
+    console.log('程序启动，或从后台进入前台显示时触发，微信小程序中也可以使用 Taro.onAppShow 绑定监听')
+    console.log('在此生命周期中通过 this.$router.params，可以访问到程序初始化参数')
+    console.log('在微信/百度/字节跳动/支付宝小程序中这一生命周期方法对应 onShow，在 H5/RN 中同步实现')
+  }
+
+  componentDidHide () {
+    console.log('componentDidHide')
+    console.log('程序从前台进入后台时触发，微信小程序中也可以使用 Taro.onAppHide 绑定监听')
+    console.log('在微信/百度/字节跳动/支付宝小程序中这一生命周期方法对应 onHide，在 H5/RN 中同步实现')
+  }
+
+  componentDidCatchError (error) {
+    console.log('componentDidCatchError')
+    console.log('程序发生脚本错误或 API 调用报错时触发，微信小程序中也可以使用 Taro.onError 绑定监听')
+    console.log('在微信/百度/字节跳动/支付宝小程序中这一生命周期方法对应 onError，H5/RN 中尚未实现')
+  }
+
+  componentDidNotFound (object) {
+    console.log('componentDidNotFound')
+    console.log('程序要打开的页面不存在时触发，微信小程序中也可以使用 Taro.onPageNotFound 绑定监听')
+    console.log('在微信/字节跳动小程序中这一生命周期方法对应 onPageNotFound，其他端尚未实现，微信小程序中，基础库 1.9.90 开始支持')
+  }
+</code></pre>
+<p>run一下看看顺序是啥？</p>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2019/10/18/CMw4K6Emc8BVxe2.png" alt="生命周期运行结果"></figure>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Taro初相识]]></title>
-        <id>https://blog.exgame.club/post/taro01</id>
-        <link href="https://blog.exgame.club/post/taro01">
+        <id>https://blog.exgame.club/post/tarojs-init</id>
+        <link href="https://blog.exgame.club/post/tarojs-init">
         </link>
         <updated>2019-09-29T01:06:06.000Z</updated>
         <content type="html"><![CDATA[<h3 id="官网">官网</h3>
