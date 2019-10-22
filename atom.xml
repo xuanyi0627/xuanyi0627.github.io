@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2019-10-22T02:13:09.909Z</updated>
+    <updated>2019-10-22T08:46:26.703Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.exgame.club"/>
     <link rel="self" href="https://blog.exgame.club/atom.xml"/>
@@ -10,6 +10,31 @@
     <logo>https://blog.exgame.club/images/avatar.png</logo>
     <icon>https://blog.exgame.club/favicon.ico</icon>
     <rights>All rights reserved 2019, Matrix</rights>
+    <entry>
+        <title type="html"><![CDATA[画一个弧线的View]]></title>
+        <id>https://blog.exgame.club/post/ios-arc</id>
+        <link href="https://blog.exgame.club/post/ios-arc">
+        </link>
+        <updated>2019-10-22T08:36:23.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://github.com/xuanyi0627/DrawArc">Github地址</a></p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/10/22/aGMFycAWlr3xobZ.png" alt="关键代码"></figure>
+<ul>
+<li>
+<p>主要方法</p>
+<pre><code>CGContextAddArcToPoint(CGContextRef cg_nullable c, CGFloat x1, CGFloat y1, CGFloat x2, CGFloat y2, CGFloat radius)
+</code></pre>
+<blockquote>
+<p>怎么理解这几个点呢</p>
+</blockquote>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2019/10/22/SjT8Pl4NKafAJXC.png" alt="怎么理解这几个点呢"></figure>
+<ul>
+<li>预览</li>
+</ul>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2019/10/22/pBMSvgDfVlG73Oe.png" alt="预览"></figure>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Taro前置内容 - 生命周期]]></title>
         <id>https://blog.exgame.club/post/tarojs-life</id>
