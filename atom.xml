@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2020-04-28T08:20:49.587Z</updated>
+    <updated>2020-04-28T08:21:48.160Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.exgame.club"/>
     <link rel="self" href="https://blog.exgame.club/atom.xml"/>
@@ -10,155 +10,6 @@
     <logo>https://blog.exgame.club/images/avatar.png</logo>
     <icon>https://blog.exgame.club/favicon.ico</icon>
     <rights>All rights reserved 2020, Matrix</rights>
-    <entry>
-        <title type="html"><![CDATA[写个`HelloWorld` - Node.js]]></title>
-        <id>https://blog.exgame.club/post/HuT6WSlCD/</id>
-        <link href="https://blog.exgame.club/post/HuT6WSlCD/">
-        </link>
-        <updated>2020-04-28T07:46:40.000Z</updated>
-        <content type="html"><![CDATA[<p>这一篇来个Node.js的</p>
-<p>写代码之前一定要把Node.js装上哈！</p>
-<ul>
-<li>
-<p>新建一个文件<code>index.js</code></p>
-</li>
-<li>
-<p>打开这个文件，在里面写段代码</p>
-</li>
-</ul>
-<pre><code>var module = require('http');
-module.createServer(function(req, resp) {
-  resp.writeHead(200, {'content-Type':'text/plain'});
-  resp.end('Hello World!');
-}).listen(9001)
-
-console.log('Server is running on port over 9001');
-</code></pre>
-<ul>
-<li>
-<p>打开<code>terminal</code></p>
-</li>
-<li>
-<p><code>cd</code> 到那个文件所在文件夹</p>
-</li>
-<li>
-<p>然后键入,回车，你可以看到Server已经运行起来了</p>
-</li>
-</ul>
-<pre><code>node index.js
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="http://upload-images.jianshu.io/upload_images/232251-2c93df3769f02860.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="node运行起来了" loading="lazy"></figure>
-<ul>
-<li>
-<p>这个时候打开你的浏览器，在地址栏输入 <a href="http://localhost:9001">http://localhost:9001</a></p>
-</li>
-<li>
-<p><code>hello world !</code>出现了。</p>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[写个`HelloWorld` - PHP]]></title>
-        <id>https://blog.exgame.club/post/wgLAFmJV0/</id>
-        <link href="https://blog.exgame.club/post/wgLAFmJV0/">
-        </link>
-        <updated>2020-04-28T07:45:22.000Z</updated>
-        <content type="html"><![CDATA[<p>这个系列是“入门”用的，看看各种语言如何写<code>Hello World</code></p>
-<p>这一篇先来PHP的</p>
-<ul>
-<li>打开<code>terminal</code></li>
-</ul>
-<blockquote>
-<p>terminal 在你的电脑里叫“终端”或者“命令行”</p>
-</blockquote>
-<ul>
-<li>找个路径建个目录</li>
-</ul>
-<pre><code>$ mkdir php
-</code></pre>
-<ul>
-<li>进入这个目录</li>
-</ul>
-<pre><code>$ cd php
-</code></pre>
-<ul>
-<li>在这个目录下新建一个<code>index.php</code>，里面的代码是这样的</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-echo &quot;hello world !&quot;;
-</code></pre>
-<ul>
-<li>保存一下，然后就写完代码了</li>
-<li>回到你的terminal，进入你刚才的路径</li>
-</ul>
-<pre><code>php index.php
-</code></pre>
-<ul>
-<li>激动人心的时刻就要到了，开启一下服务吧</li>
-</ul>
-<pre><code>php -S 0.0.0.0:8080
-</code></pre>
-<ul>
-<li>然后你的应该出现一堆很神奇的东西</li>
-</ul>
-<pre><code>PHP 5.5.30 Development Server started at Thu Jan 21 12:49:35 2016
-Listening on http://0.0.0.0:8080
-Document root is /Users/Echo/php
-Press Ctrl-C to quit.
-</code></pre>
-<ul>
-<li>
-<p>这个时候打开你的浏览器，在地址栏输入 <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a></p>
-</li>
-<li>
-<p><code>hello world !</code>出现了。</p>
-</li>
-</ul>
-<h4 id="收工">收工</h4>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[写个`HelloWorld` - Ruby]]></title>
-        <id>https://blog.exgame.club/post/hello-ruby/</id>
-        <link href="https://blog.exgame.club/post/hello-ruby/">
-        </link>
-        <updated>2020-04-28T07:42:50.000Z</updated>
-        <content type="html"><![CDATA[<p>这一篇来个Ruby的</p>
-<p>这可能是最简单的<code>Hello World</code>了</p>
-<p>写代码之前一定要把Ruby装上哈！然后就可以见证奇迹了！一瞬间的美好！</p>
-<ul>
-<li>
-<p>打开<code>terminal</code></p>
-</li>
-<li>
-<p>输入<code>irb</code>然后回车</p>
-</li>
-<li>
-<p>然后<code>terminal</code>就成这样了<br>
-<img src="http://upload-images.jianshu.io/upload_images/232251-90252965d02b265e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ruby运行起来了" loading="lazy"></p>
-</li>
-<li>
-<p>敲点儿代码，但是这并不是打印的Hello World!</p>
-</li>
-</ul>
-<pre><code>&quot;Hello World !&quot;
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="http://upload-images.jianshu.io/upload_images/232251-8ba4993ab0a8c7e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这并不是打印的Hello World" loading="lazy"></figure>
-<ul>
-<li>这才是打印的Hello World!</li>
-</ul>
-<pre><code>puts &quot;Hello World !&quot;
-</code></pre>
-<figure data-type="image" tabindex="2"><img src="http://upload-images.jianshu.io/upload_images/232251-e5b25e14d58eac79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这才是打印的Hello World" loading="lazy"></figure>
-<blockquote>
-<ul>
-<li>这就写完了？</li>
-<li>对！</li>
-</ul>
-</blockquote>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[画一个弧线的View]]></title>
         <id>https://blog.exgame.club/post/ios-arc/</id>
@@ -562,6 +413,173 @@ make install
 
 /usr/local/nginx/sbin/nginx -s reload #重启
 </code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Supervisor为Go守护进程]]></title>
+        <id>https://blog.exgame.club/post/supervisorgo/</id>
+        <link href="https://blog.exgame.club/post/supervisorgo/">
+        </link>
+        <updated>2019-09-18T08:12:32.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="系统">系统</h3>
+<blockquote>
+<p>CentOS7.x</p>
+</blockquote>
+<h3 id="步骤">步骤</h3>
+<ol>
+<li>切换用户为root</li>
+</ol>
+<pre><code class="language-shell"># sudo su - #切换为root用户
+</code></pre>
+<ol start="2">
+<li>安装</li>
+</ol>
+<pre><code># yum install epel-release
+# yum install -y supervisor
+# systemctl enable supervisord # 开机自启动
+# systemctl start supervisord # 启动supervisord服务
+
+# systemctl status supervisord # 查看supervisord服务状态
+# ps -ef|grep supervisord # 查看是否存在supervisord进程
+</code></pre>
+<ol start="3">
+<li>创建supervisor所需目录</li>
+</ol>
+<pre><code># mkdir /etc/supervisord.d/
+</code></pre>
+<ol start="4">
+<li>创建supervisor配置文件</li>
+</ol>
+<pre><code># echo_supervisord_conf &gt; /etc/supervisord.conf
+</code></pre>
+<ol start="5">
+<li>编辑supervisord.conf文件</li>
+</ol>
+<pre><code>[include]
+files = /etc/supervisord.d/*.ini
+</code></pre>
+<ol start="6">
+<li>启动supervisor</li>
+</ol>
+<pre><code># supervisord -c /etc/supervisord.conf
+</code></pre>
+<ol start="7">
+<li>重启ERROR</li>
+</ol>
+<blockquote>
+<p>Error: Another program is already listening on a port that one of our HTTP servers is configured to use. Shut this program down first before starting</p>
+</blockquote>
+<pre><code>find / -name supervisor.sock
+unlink /tmp/supervisor.sock
+</code></pre>
+<ol start="8">
+<li>*.ini 文件模板</li>
+</ol>
+<pre><code>[program:server_version]
+command=/usr/local/gopath/bin/version_pro
+autostart=true
+autorestart=true
+startsecs=10
+stdout_logfile=/var/log/supervisord/version.log
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=10
+stdout_capture_maxbytes=1MB
+stderr_logfile=/var/log/supervisord/version.log
+stderr_logfile_maxbytes=1MB
+stderr_logfile_backups=10
+stderr_capture_maxbytes=1MB
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SignUp VS Register | SignIn VS Login]]></title>
+        <id>https://blog.exgame.club/post/diffwithfourword/</id>
+        <link href="https://blog.exgame.club/post/diffwithfourword/">
+        </link>
+        <updated>2019-02-21T08:13:36.000Z</updated>
+        <content type="html"><![CDATA[<p>你知道这两组词的区别么？</p>
+<blockquote>
+<ul>
+<li>Sign in</li>
+<li>Log in</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Sign up</li>
+<li>Register</li>
+</ul>
+</blockquote>
+<p>宣匠来给你划重点了</p>
+<p>！！！敲黑板</p>
+<p>诶？你怎么不拿本记呢？</p>
+<p><a href="https://english.stackexchange.com/questions/211729/what-is-the-difference-between-log-in-sign-in-register-sign-up-log-out-sign">解释来源点这里</a></p>
+<ul>
+<li><strong>both login and sign in are the same as authenticate</strong><br>
+verb, to validate the user. Otherwise password are not required.</li>
+<li><strong>both logout and sign out are the same</strong></li>
+<li><strong>log in is to authenticate into a website that has different interface as guest</strong><br>
+You cannot use the logged in interface if you are a guest, e.g. Facebook</li>
+<li><strong>sign in is to authenticate into a website that has same interface as guest</strong><br>
+You can still use the website without signing in, e.g. Google</li>
+<li><strong>register is entering your information into the system for your account for serious thing</strong><br>
+You need to enter your information like name, address, contact number, etc for domain registration. Another example is company registration.</li>
+<li><strong>sign up is to create an account to use</strong><br>
+You only need to enter essential information like email, username, password, etc for a Facebook account.</li>
+</ul>
+<p>我不负责翻译，我只是重点的搬运工</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[四象限法则这样用]]></title>
+        <id>https://blog.exgame.club/post/quadrant/</id>
+        <link href="https://blog.exgame.club/post/quadrant/">
+        </link>
+        <updated>2018-08-04T11:55:07.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="用在组织环节">用在组织环节</h2>
+<p>每天我们都需要找出固定的时间（我的习惯是早中晚三次）对TODO List的任务进行处理组织，处理结束后，会得到六大清单：</p>
+<blockquote>
+<ul>
+<li>将来也许</li>
+<li>等待</li>
+<li>项目</li>
+<li>项目分解的下一步行动</li>
+<li>日程</li>
+<li>抓紧去做</li>
+</ul>
+</blockquote>
+<p>组织时，需要对“项目分解的下一步行动”、“抓紧去做”、“日程”三个清单进行优先级判定。这个时候首次调用四象限法则概念，根据自己的价值观、目标体系等长远视角，确定某个行动的优先级排序，将行动划分为：高、中、低、无四个优先级。</p>
+<p>但是，需要明确一点，这时候的优先级判断，是不需要考虑“紧急”这个属性的，只要考虑“重要性”就可以了。因为我们通常都要选择不受打扰的时间来完成处理组织，这个时候通常不会出现紧急的事件；还有另外一个原因，等下面说。</p>
+<h2 id="用在明确日计划中">用在明确日计划中</h2>
+<p>当我们的行动管理系统已经都组织环节后，下一步行动清单中的所有行动都具备了优先级、情境、精力损耗等属性。但是，当制定今日计划，究竟从下一步行动清单中选择那个行动呢？原则也很简单——选择优先级最高的！但是，这样也存在一个问题，那就是当完成今日待办的时候，大量的行动的优先级都是最高级别的，那到底应该做哪件事情呢？</p>
+<p>所以，在当下，必须再次调整优先级。不要担心所有的事情都是优先级高的事项，调整了之后会让自己忽视。因为，今日待办是日程的一部分，是优先级最高的清单，我们需要的是在最高优先级的行动中再排出顺序。</p>
+<h2 id="执行时的敏锐觉察">执行时的敏锐觉察</h2>
+<p>所谓计划不如变化快啊！当执行今日待办中的安排时，总是会有临时事件发生，这些事件出现时到底应该怎么做呢？这时候，就必须调用四象限法则来约束自己了！</p>
+<p>必须对突然发生的“中断事件”和原来正在执行的计划中的行动进行比较，比较的原则就是问一个问题：哪个重要，哪个紧急。如果中断事件的重要紧急程度低，那就可以放入TODO List；如果中断事件重要，就直接跳过处理组织流程，直接去分解、执行！</p>
+<h2 id="难的不是四象限法则">难的不是四象限法则</h2>
+<p>现在看来，四象限法则并不难，就是几个概念，在日常执行的时候注意到就好了。但是，难就难在“注意”两个字！怎么才能提醒自己做前置判断呢，怎么才能觉察到自己的行动和思想方式，怎么才能让自己过上有意识的生活呢？</p>
+<p>先简单提提，以后再系统写写。方法不过有几种：</p>
+<blockquote>
+<ul>
+<li>就是要开放心态，当别人说自己不对时，内心不设防，听进去别人的建议，及时整理；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>是将提醒自己觉察的方法实物化；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>是立刻学习学习数息法，并且每天找出5分钟来训练；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>是找机会去练习冥想、内观。</li>
+</ul>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/28/YzaWRtuJjHix8kS.jpg" alt="TO DO IT" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
