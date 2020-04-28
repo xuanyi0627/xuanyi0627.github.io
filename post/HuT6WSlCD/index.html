@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-<title>Taro前置内容 - State和Props - Matrix</title>
+<title>写个`HelloWorld` - Node.js - Matrix</title>
 <meta name="description" content="业精于勤">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -130,38 +130,69 @@
                     <div class="col-12 col-lg-10">
                       <div class="layout-post-main m-right m-md-right">
                         <div class="layout-post-header">
-                          <h1 class="layout-post-title">Taro前置内容 - State和Props</h1>
+                          <h1 class="layout-post-title">写个`HelloWorld` - Node.js</h1>
                           <div class="layout-post-meta">
                             <div class="item">
-                               <a href="https://blog.exgame.club/tag/OPtWzDUZb/" class="post--keyword"
-                                data-title="前端" data-type="post_tag" data-term-id="39">前端</a>
-                               <a href="https://blog.exgame.club/tag/9uPCqGGr5V/" class="post--keyword"
-                                data-title="react" data-type="post_tag" data-term-id="39">react</a>
-                               <a href="https://blog.exgame.club/tag/x9wW1CJG3b/" class="post--keyword"
-                                data-title="小程序" data-type="post_tag" data-term-id="39">小程序</a>
-                               <a href="https://blog.exgame.club/tag/yfoCCaxYTC/" class="post--keyword"
-                                data-title="taro" data-type="post_tag" data-term-id="39">taro</a>
                               
                             </div>
                             <div class="item">
-                              <span>2019-10-22</span>
+                              <span>2020-04-28</span>
                             </div>
                           </div>
                         </div>
                         <div class="layout-post-content">
                           <div class="layout-post-item">
                             
-                            <p class="with-img"><img src="https://i.loli.net/2020/04/28/hOowl5FgMm2dev6.png"
-                                class="attachment-full size-full wp-post-image" alt="Taro前置内容 - State和Props" /></p>
+                            <p class="with-img"><img src="http://upload-images.jianshu.io/upload_images/232251-0f0be5c9f2bd454f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+                                class="attachment-full size-full wp-post-image" alt="写个`HelloWorld` - Node.js" /></p>
                             
-                            <p>1</p>
+                            <p>这一篇来个Node.js的</p>
+<p>写代码之前一定要把Node.js装上哈！</p>
+<ul>
+<li>
+<p>新建一个文件<code>index.js</code></p>
+</li>
+<li>
+<p>打开这个文件，在里面写段代码</p>
+</li>
+</ul>
+<pre><code>var module = require('http');
+module.createServer(function(req, resp) {
+  resp.writeHead(200, {'content-Type':'text/plain'});
+  resp.end('Hello World!');
+}).listen(9001)
+
+console.log('Server is running on port over 9001');
+</code></pre>
+<ul>
+<li>
+<p>打开<code>terminal</code></p>
+</li>
+<li>
+<p><code>cd</code> 到那个文件所在文件夹</p>
+</li>
+<li>
+<p>然后键入,回车，你可以看到Server已经运行起来了</p>
+</li>
+</ul>
+<pre><code>node index.js
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="http://upload-images.jianshu.io/upload_images/232251-2c93df3769f02860.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="node运行起来了" loading="lazy"></figure>
+<ul>
+<li>
+<p>这个时候打开你的浏览器，在地址栏输入 <a href="http://localhost:9001">http://localhost:9001</a></p>
+</li>
+<li>
+<p><code>hello world !</code>出现了。</p>
+</li>
+</ul>
 
                           </div>
                         </div>
                         <div class="layout-post-social">
                           <div class="item reader">
-                            <div id="/post/tarojs-state-props/" class="leancloud-visitors view"
-                              data-flag-title="Taro前置内容 - State和Props">
+                            <div id="/post/HuT6WSlCD/" class="leancloud-visitors view"
+                              data-flag-title="写个`HelloWorld` - Node.js">
                               <span class="post-meta-item-text">阅读 </span>
                               <span class="leancloud-visitors-count"></span>
                             </div>
@@ -170,6 +201,35 @@
 
                         <div class="layout-post-navigation">
                           <div class="navigation-list">
+                            
+                            <div class="post-card row">
+                              
+                              <div class="card-content col-8 col-md-9">
+                                <div class="card-body">
+                                  <div class="header">
+                                    <a href="https://blog.exgame.club/post/wgLAFmJV0/" class="title">
+                                      <h4>写个`HelloWorld` - PHP</h4>
+                                    </a>
+                                  </div>
+                                  <div class="inner d-none d-sm-block">
+                                    <div class="abstract">
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="item"><span>下一篇</span></div>
+                                  <div class="item">2020-04-28</div>
+                                </div>
+                              </div>
+                              <div class="card-thumb col-4 col-md-3">
+                                <div class="thumb">
+                                  <a href="https://blog.exgame.club/post/wgLAFmJV0/"
+                                    style="background-image: url('http://upload-images.jianshu.io/upload_images/232251-0f2070b9f35d6d2a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240');"></a>
+                                </div>
+                              </div>
+                              
+                            </div>
                             
                           </div>
                         </div>
