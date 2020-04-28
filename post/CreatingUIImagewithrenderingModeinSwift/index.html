@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-<title>About Me - Matrix</title>
+<title>Creating UIImage with renderingMode in Swift - Matrix</title>
 <meta name="description" content="业精于勤">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -130,55 +130,39 @@
                     <div class="col-12 col-lg-10">
                       <div class="layout-post-main m-right m-md-right">
                         <div class="layout-post-header">
-                          <h1 class="layout-post-title">About Me</h1>
+                          <h1 class="layout-post-title">Creating UIImage with renderingMode in Swift</h1>
                           <div class="layout-post-meta">
                             <div class="item">
+                               <a href="https://blog.exgame.club/tag/pQ0AY0UD2/" class="post--keyword"
+                                data-title="swift" data-type="post_tag" data-term-id="39">swift</a>
+                               <a href="https://blog.exgame.club/tag/gg2gO_pOQ/" class="post--keyword"
+                                data-title="iOS" data-type="post_tag" data-term-id="39">iOS</a>
                               
                             </div>
                             <div class="item">
-                              <span>2019-09-19</span>
+                              <span>2018-01-02</span>
                             </div>
                           </div>
                         </div>
                         <div class="layout-post-content">
                           <div class="layout-post-item">
                             
-                            <p class="with-img"><img src="https://blog.exgame.club/post-images/about.jpg"
-                                class="attachment-full size-full wp-post-image" alt="About Me" /></p>
-                            
-                            <h3 id="skills">Skills</h3>
-<ul>
-<li>Objective-C</li>
-<li>Swift</li>
-<li>Golang</li>
-<li>React.js</li>
-<li>Vue.js</li>
-<li>Taro.js</li>
-<li>JavaScript</li>
-<li>TypeScript</li>
-<li>Nginx</li>
-<li>Jenkins</li>
-<li>Docker</li>
-<li>Sketch</li>
-<li>Affinity Designer</li>
-</ul>
-<h3 id="hobbies">Hobbies</h3>
-<ul>
-<li>Eat</li>
-<li>Milk Tea</li>
-<li>Video Game</li>
-<li>King Of Glory</li>
-<li>Talk Show</li>
-<li>Guitar</li>
-<li>Ukuleles</li>
-</ul>
+                            <h3 id="for-swift-3">for Swift 3</h3>
+<pre><code>var image = UIImage(named:&quot;myImage&quot;)?.withRenderingMode(.alwaysOriginal)
+</code></pre>
+<h3 id="for-swift-2x">for Swift 2.x</h3>
+<pre><code>var image : UIImage? = UIImage(named:&quot;myImage.png&quot;).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+</code></pre>
+<p>or</p>
+<pre><code>var image : UIImage? = UIImage(named:&quot;myImage.png&quot;).imageWithRenderingMode(. AlwaysOriginal)
+</code></pre>
 
                           </div>
                         </div>
                         <div class="layout-post-social">
                           <div class="item reader">
-                            <div id="/post/about/" class="leancloud-visitors view"
-                              data-flag-title="About Me">
+                            <div id="/post/CreatingUIImagewithrenderingModeinSwift/" class="leancloud-visitors view"
+                              data-flag-title="Creating UIImage with renderingMode in Swift">
                               <span class="post-meta-item-text">阅读 </span>
                               <span class="leancloud-visitors-count"></span>
                             </div>
@@ -187,6 +171,59 @@
 
                         <div class="layout-post-navigation">
                           <div class="navigation-list">
+                            
+                            <div class="post-card row">
+                              
+                              <div class="card-content col-8 col-md-9">
+                                <div class="card-body">
+                                  <div class="header">
+                                    <a href="https://blog.exgame.club/post/quadrant/" class="title">
+                                      <h4>四象限法则这样用</h4>
+                                    </a>
+                                  </div>
+                                  <div class="inner d-none d-sm-block">
+                                    <div class="abstract">
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="item"><span>上一篇</span></div>
+                                  <div class="item">2018-08-04</div>
+                                </div>
+                              </div>
+                              <div class="card-thumb col-4 col-md-3">
+                                <div class="thumb">
+                                  <a href="https://blog.exgame.club/post/quadrant/"
+                                    style="background-image: url('https://i.loli.net/2020/04/28/kKIn251xosifSgA.gif');"></a>
+                                </div>
+                              </div>
+                              
+                            </div>
+
+                            <div class="post-card row">
+                              
+                              <div class="card-content col-12">
+                                <div class="card-body">
+                                  <div class="header">
+                                    <a href="https://blog.exgame.club/post/maccreatephp/" class="title">
+                                      <h4>在MacOS上第一次搭建PHP环境</h4>
+                                    </a>
+                                  </div>
+                                  <div class="inner">
+                                    <div class="abstract">
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="item"><span>下一篇</span></div>
+                                  <div class="item">2017-09-17</div>
+                                </div>
+                              </div>
+                              
+                            </div>
+
                             
                           </div>
                         </div>
@@ -204,8 +241,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#hobbies">Hobbies</a></li>
+<li><a href="#for-swift-3">for Swift 3</a></li>
+<li><a href="#for-swift-2x">for Swift 2.x</a></li>
 </ul>
 </li>
 </ul>
