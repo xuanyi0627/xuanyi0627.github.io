@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-<title>Taro初相识 - Matrix</title>
+<title>在MacOS上第一次搭建PHP环境 - Matrix</title>
 <meta name="description" content="业精于勤">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -130,169 +130,70 @@
                     <div class="col-12 col-lg-10">
                       <div class="layout-post-main m-right m-md-right">
                         <div class="layout-post-header">
-                          <h1 class="layout-post-title">Taro初相识</h1>
+                          <h1 class="layout-post-title">在MacOS上第一次搭建PHP环境</h1>
                           <div class="layout-post-meta">
                             <div class="item">
-                               <a href="https://blog.exgame.club/tag/OPtWzDUZb/" class="post--keyword"
-                                data-title="前端" data-type="post_tag" data-term-id="39">前端</a>
-                               <a href="https://blog.exgame.club/tag/9uPCqGGr5V/" class="post--keyword"
-                                data-title="react" data-type="post_tag" data-term-id="39">react</a>
-                               <a href="https://blog.exgame.club/tag/x9wW1CJG3b/" class="post--keyword"
-                                data-title="小程序" data-type="post_tag" data-term-id="39">小程序</a>
-                               <a href="https://blog.exgame.club/tag/yfoCCaxYTC/" class="post--keyword"
-                                data-title="taro" data-type="post_tag" data-term-id="39">taro</a>
+                               <a href="https://blog.exgame.club/tag/BSYXK99HM4/" class="post--keyword"
+                                data-title="tips" data-type="post_tag" data-term-id="39">tips</a>
+                               <a href="https://blog.exgame.club/tag/PZjmc1MYG0/" class="post--keyword"
+                                data-title="server" data-type="post_tag" data-term-id="39">server</a>
                               
                             </div>
                             <div class="item">
-                              <span>2019-09-29</span>
+                              <span>2017-09-17</span>
                             </div>
                           </div>
                         </div>
                         <div class="layout-post-content">
                           <div class="layout-post-item">
                             
-                            <p class="with-img"><img src="https://i.loli.net/2020/04/28/hOowl5FgMm2dev6.png"
-                                class="attachment-full size-full wp-post-image" alt="Taro初相识" /></p>
-                            
-                            <h3 id="官网">官网</h3>
-<p><a href="https://taro.aotu.io/">https://taro.aotu.io/</a></p>
-<h3 id="安装">安装</h3>
-<pre><code class="language-shell">$ yarn global add @tarojs/cli
+                            <p>作为一个在iOS界混迹多年的开发者，一直孤注一掷的奔跑在追随乔帮主的路上，从Objective-C到Swift，可谓盲目崇拜。</p>
+<p>直到，一次次自己写API的冲动一点点的动摇了我，我可能需要学习一门新的后端语言了，虽然Swift正在往后端语言靠近，但是始终只是第三方在做的扩展，身不正。在大学期间学习了JAVA，但是已经还给老师了，想到SSH，想到庞大的体系，望而却步。PHP作为大众口中『世界上最好的开发语言』我当然选择了，于是，我踏上了PHP之路。</p>
+<p>工欲善其事，必先搭个环境。</p>
+<p>搭环境并没有费什么时间，主要是因为没在国内的网站搜索了，请翻墙至Youtube需要720P超清教学录像。</p>
+<h3 id="phpstorm">PhpStorm</h3>
+<p>作为JetBrains旗下的专为PHP开发准备的PhpStorm，我没理由不选择它作为我的IDE。</p>
+<p><a href="https://www.jetbrains.com/phpstorm/">点击至官网下载</a></p>
+<p>打开后选择你喜欢的Theme，IDE的配色，然后，选择你的PHP版本，并配置CLI。</p>
+<figure data-type="image" tabindex="1"><img src="http://upload-images.jianshu.io/upload_images/232251-16527efc4058492c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" loading="lazy"></figure>
+<p>或许你会问我，CLI这个是怎么配置的呢？路径在哪呢？</p>
+<p>等我介绍完下面一个工具一起说。</p>
+<h3 id="mamp">MAMP</h3>
+<p>在Windows下开发工开发者一定知道WAMP吧，Windows Apache MySQL PHP。</p>
+<p>那在Mac OS 下就肯定有MAMP。Mac Apache MySQL PHP。</p>
+<p><a href="https://www.mamp.info/en/downloads/">点击至官网下载</a></p>
+<p>这是一个集成了Apache\Nginx\MySQL等环境的集成服务。安装以后轻松的帮我们搭建好了PHP所需要的开发环境。</p>
+<p>我们只需要Start Servers就好了。</p>
+<p>打开后按照流程引导就行了，有点儿前后端经验的100%能看懂。看不懂的留言。我看了一下PRO还是挺有用的，多了好多功能，有兴趣的可以试一下，有14天试用期。</p>
+<p>安装好以后，我们回到刚才PhpStorm留下的CLI的问题。</p>
+<figure data-type="image" tabindex="2"><img src="http://upload-images.jianshu.io/upload_images/232251-0a6955f3789a23c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" loading="lazy"></figure>
+<p>根据你的PHP版本，选择对应路径下的php就好了。</p>
+<p>然后启动服务，你就可以进行PHP开发了。</p>
+<p>等等，如果你做惯了App的开发，是不是需要一个Debug的工具，在MAMP中帮我们集成了下面这个家伙，只不过它需要我们。</p>
+<h3 id="macgdbp">MacGDBp</h3>
+<p>我可以把它认为是PHP的Debug工具。至少到现在我还这么认为。</p>
+<p><a href="https://www.bluestatic.org/software/macgdbp/">点击至官网下载</a></p>
+<p>在MAMP PRO中选择这个</p>
+<figure data-type="image" tabindex="3"><img src="http://upload-images.jianshu.io/upload_images/232251-68b8a7e413923560.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" loading="lazy"></figure>
+<p>打开<code>php.ini</code>文件，添加这样一行</p>
+<pre><code class="language-shell">xdebug.idekey=&quot;PHPSTORM&quot;
 </code></pre>
-<h3 id="更新-taro">更新 Taro</h3>
-<pre><code class="language-shell">$ taro update self
-</code></pre>
-<h3 id="创建项目">创建项目</h3>
-<pre><code class="language-shell">$ taro init 项目名称
-</code></pre>
-<p>CLI会让我们做四个选择，现在我们只需要用最简单的方式创建项目，所以我们作出以下选择：</p>
-<table>
-<thead>
-<tr>
-<th>问题</th>
-<th>选择</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>请输入项目介绍！</td>
-<td>根据项目需求自己写</td>
-</tr>
-<tr>
-<td>是否需要使用 TypeScript ？ (Y/n)</td>
-<td>n</td>
-</tr>
-<tr>
-<td>请选择 CSS 预处理器（Sass/Less/Stylus/无）</td>
-<td>无</td>
-</tr>
-<tr>
-<td>请选择模板（默认模板/mobx/redux/wxcloud/wxplugin）</td>
-<td>默认模板</td>
-</tr>
-</tbody>
-</table>
-<p>创建成功后等终端出现一下字样即为创建成功。</p>
-<blockquote>
-<p>创建项目 todoList 成功！<br>
-请进入项目目录 todoList 开始工作吧！😝</p>
-</blockquote>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/09/29/nFvweyZ3PCjE8M7.png" alt="创建流程" loading="lazy"></figure>
-<h3 id="更新">更新</h3>
-<ul>
-<li>更新 taro-cli 工具：</li>
-</ul>
-<pre><code class="language-shell"># taro
-$ taro update self
-
-# npm 
-npm i -g @tarojs/cli@latest 
-
-# yarn 
-yarn global add @tarojs/cli@latest
-</code></pre>
-<ul>
-<li>更新项目中 Taro 相关的依赖</li>
-</ul>
-<pre><code class="language-shell">taro update project
-</code></pre>
-<h3 id="文件目录">文件目录</h3>
-<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2019/09/29/2E9UVHaORmi3KcD.png" alt="文件目录" loading="lazy"></figure>
-<ul>
-<li>config - 配置文件</li>
-<li>src - 资源文件</li>
-</ul>
-<h3 id="编译和打包">编译和打包</h3>
-<ul>
-<li>微信小程序编译预览及打包</li>
-</ul>
-<pre><code class="language-shell"># npm script
-
-$ npm run dev:weapp
-
-$ npm run build:weapp
-
-# 仅限全局安装
-
-$ taro build --type weapp --watch
-
-$ taro build --type weapp
-</code></pre>
-<ul>
-<li>百度小程序</li>
-</ul>
-<pre><code class="language-shell"># npm script
-
-$ npm run dev:swan
-$ npm run build:swan
-
-# 仅限全局安装
-
-$ taro build --type swan --watch
-$ taro build --type swan
-</code></pre>
-<ul>
-<li>支付宝小程序</li>
-</ul>
-<pre><code class="language-shell"># npm script
-
-$ npm run dev:alipay
-$ npm run build:alipay
-
-# 仅限全局安装
-
-$ taro build --type alipay --watch
-$ taro build --type alipay
-</code></pre>
-<ul>
-<li>H5</li>
-</ul>
-<pre><code class="language-shell"># npm script
-
-$ npm run dev:h5
-
-# 仅限全局安装
-
-$ taro build --type h5 --watch
-</code></pre>
-<ul>
-<li>React Native</li>
-</ul>
-<pre><code class="language-shell"># npm script
-
-$ npm run dev:rn
-
-# 仅限全局安装
-
-$ taro build --type rn --watch
-</code></pre>
+<p>在安装一个Chrome的插件Xdebug helper。</p>
+<p><a href="https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc/related">安装地址</a></p>
+<h3 id="mysql">MySQL</h3>
+<p>这个我就不多说了，一个Server不可能没有数据库。</p>
+<p><a href="https://dev.mysql.com/downloads/file/?id=468289">点击至官网下载</a></p>
+<p>至此，一个PHP环境就搭好了，可以写代码了。</p>
+<p>PhpStorm的插件？</p>
+<p>这个我还没用过。</p>
+<p>走着看吧。</p>
 
                           </div>
                         </div>
                         <div class="layout-post-social">
                           <div class="item reader">
-                            <div id="/post/tarojs-init/" class="leancloud-visitors view"
-                              data-flag-title="Taro初相识">
+                            <div id="/post/maccreatephp/" class="leancloud-visitors view"
+                              data-flag-title="在MacOS上第一次搭建PHP环境">
                               <span class="post-meta-item-text">阅读 </span>
                               <span class="leancloud-visitors-count"></span>
                             </div>
@@ -307,8 +208,8 @@ $ taro build --type rn --watch
                               <div class="card-content col-8 col-md-9">
                                 <div class="card-body">
                                   <div class="header">
-                                    <a href="https://blog.exgame.club/post/tarojs-life/" class="title">
-                                      <h4>Taro前置内容 - 生命周期</h4>
+                                    <a href="https://blog.exgame.club/post/quadrant/" class="title">
+                                      <h4>四象限法则这样用</h4>
                                     </a>
                                   </div>
                                   <div class="inner d-none d-sm-block">
@@ -319,13 +220,13 @@ $ taro build --type rn --watch
                                 </div>
                                 <div class="card-footer">
                                   <div class="item"><span>上一篇</span></div>
-                                  <div class="item">2019-10-18</div>
+                                  <div class="item">2018-08-04</div>
                                 </div>
                               </div>
                               <div class="card-thumb col-4 col-md-3">
                                 <div class="thumb">
-                                  <a href="https://blog.exgame.club/post/tarojs-life/"
-                                    style="background-image: url('https://i.loli.net/2020/04/28/hOowl5FgMm2dev6.png');"></a>
+                                  <a href="https://blog.exgame.club/post/quadrant/"
+                                    style="background-image: url('https://i.loli.net/2020/04/28/kKIn251xosifSgA.gif');"></a>
                                 </div>
                               </div>
                               
@@ -333,14 +234,14 @@ $ taro build --type rn --watch
 
                             <div class="post-card row">
                               
-                              <div class="card-content col-8 col-md-9">
+                              <div class="card-content col-12">
                                 <div class="card-body">
                                   <div class="header">
-                                    <a href="https://blog.exgame.club/post/mysqlfunc/" class="title">
-                                      <h4>MySQL 常用方法</h4>
+                                    <a href="https://blog.exgame.club/post/phonenumber/" class="title">
+                                      <h4>输入框在手机号上的特殊处理</h4>
                                     </a>
                                   </div>
-                                  <div class="inner d-none d-sm-block">
+                                  <div class="inner">
                                     <div class="abstract">
                                       
                                     </div>
@@ -348,13 +249,7 @@ $ taro build --type rn --watch
                                 </div>
                                 <div class="card-footer">
                                   <div class="item"><span>下一篇</span></div>
-                                  <div class="item">2019-09-18</div>
-                                </div>
-                              </div>
-                              <div class="card-thumb col-4 col-md-3">
-                                <div class="thumb">
-                                  <a href="https://blog.exgame.club/post/mysqlfunc/"
-                                    style="background-image: url('https://blog.exgame.club/post-images/mysqlfunc.png');"></a>
+                                  <div class="item">2017-09-12</div>
                                 </div>
                               </div>
                               
@@ -377,13 +272,10 @@ $ taro build --type rn --watch
 <ul>
 <li>
 <ul>
-<li><a href="#%E5%AE%98%E7%BD%91">官网</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
-<li><a href="#%E6%9B%B4%E6%96%B0-taro">更新 Taro</a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE">创建项目</a></li>
-<li><a href="#%E6%9B%B4%E6%96%B0">更新</a></li>
-<li><a href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95">文件目录</a></li>
-<li><a href="#%E7%BC%96%E8%AF%91%E5%92%8C%E6%89%93%E5%8C%85">编译和打包</a></li>
+<li><a href="#phpstorm">PhpStorm</a></li>
+<li><a href="#mamp">MAMP</a></li>
+<li><a href="#macgdbp">MacGDBp</a></li>
+<li><a href="#mysql">MySQL</a></li>
 </ul>
 </li>
 </ul>
