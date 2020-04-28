@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2020-04-28T07:33:46.879Z</updated>
+    <updated>2020-04-28T07:39:45.055Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.exgame.club"/>
     <link rel="self" href="https://blog.exgame.club/atom.xml"/>
@@ -10,6 +10,58 @@
     <logo>https://blog.exgame.club/images/avatar.png</logo>
     <icon>https://blog.exgame.club/favicon.ico</icon>
     <rights>All rights reserved 2020, Matrix</rights>
+    <entry>
+        <title type="html"><![CDATA[四象限法则这样用]]></title>
+        <id>https://blog.exgame.club/post/quadrant/</id>
+        <link href="https://blog.exgame.club/post/quadrant/">
+        </link>
+        <updated>2020-04-28T07:35:07.000Z</updated>
+        <content type="html"><![CDATA[<p>##用在组织环节</p>
+<p>每天我们都需要找出固定的时间（我的习惯是早中晚三次）对TODO List的任务进行处理组织，处理结束后，会得到六大清单：</p>
+<blockquote>
+<ul>
+<li>将来也许</li>
+<li>等待</li>
+<li>项目</li>
+<li>项目分解的下一步行动</li>
+<li>日程</li>
+<li>抓紧去做</li>
+</ul>
+</blockquote>
+<p>组织时，需要对“项目分解的下一步行动”、“抓紧去做”、“日程”三个清单进行优先级判定。这个时候首次调用四象限法则概念，根据自己的价值观、目标体系等长远视角，确定某个行动的优先级排序，将行动划分为：高、中、低、无四个优先级。</p>
+<p>但是，需要明确一点，这时候的优先级判断，是不需要考虑“紧急”这个属性的，只要考虑“重要性”就可以了。因为我们通常都要选择不受打扰的时间来完成处理组织，这个时候通常不会出现紧急的事件；还有另外一个原因，等下面说。</p>
+<p>##用在明确日计划中</p>
+<p>当我们的行动管理系统已经都组织环节后，下一步行动清单中的所有行动都具备了优先级、情境、精力损耗等属性。但是，当制定今日计划，究竟从下一步行动清单中选择那个行动呢？原则也很简单——选择优先级最高的！但是，这样也存在一个问题，那就是当完成今日待办的时候，大量的行动的优先级都是最高级别的，那到底应该做哪件事情呢？</p>
+<p>所以，在当下，必须再次调整优先级。不要担心所有的事情都是优先级高的事项，调整了之后会让自己忽视。因为，今日待办是日程的一部分，是优先级最高的清单，我们需要的是在最高优先级的行动中再排出顺序。</p>
+<p>##执行时的敏锐觉察</p>
+<p>所谓计划不如变化快啊！当执行今日待办中的安排时，总是会有临时事件发生，这些事件出现时到底应该怎么做呢？这时候，就必须调用四象限法则来约束自己了！</p>
+<p>必须对突然发生的“中断事件”和原来正在执行的计划中的行动进行比较，比较的原则就是问一个问题：哪个重要，哪个紧急。如果中断事件的重要紧急程度低，那就可以放入TODO List；如果中断事件重要，就直接跳过处理组织流程，直接去分解、执行！</p>
+<p>##难的不是四象限法则</p>
+<p>现在看来，四象限法则并不难，就是几个概念，在日常执行的时候注意到就好了。但是，难就难在“注意”两个字！怎么才能提醒自己做前置判断呢，怎么才能觉察到自己的行动和思想方式，怎么才能让自己过上有意识的生活呢？</p>
+<p>先简单提提，以后再系统写写。方法不过有几种：</p>
+<blockquote>
+<ul>
+<li>就是要开放心态，当别人说自己不对时，内心不设防，听进去别人的建议，及时整理；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>是将提醒自己觉察的方法实物化；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>是立刻学习学习数息法，并且每天找出5分钟来训练；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>是找机会去练习冥想、内观。</li>
+</ul>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="http://upload-images.jianshu.io/upload_images/232251-292f92cd355a8b79.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TO DO IT" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[画一个弧线的View]]></title>
         <id>https://blog.exgame.club/post/ios-arc/</id>
