@@ -31,33 +31,9 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            业精于勤
+            文章目录
           </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/xuanyi0627" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
+          <div class="toc-container hidden lg:block">
             
           </div>
         </div>
@@ -102,105 +78,112 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-line"></i> develop
-        </h2>
-        
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-      <a href="https://blog.exgame.club/post/mysqlfunc/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://blog.exgame.club/post-images/mysqlfunc.png'">
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">iOS证书及ipa包重签名探究</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2015-08-26 / 3 min read
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://blog.exgame.club/post/mysqlfunc/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">MySQL 常用方法</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
         
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-09-18 / 1 min read</div>
-    </div>
-  </section>
+        <div class="post-content yue">
+          <p>iOS证书学习推荐博客代码签名探析，本文重点在于介绍ios8.1.3系统ipa包重签名(如企业证书)无法安装的问题。苹果在iOS8.1.3系统以后加强了对ipa安装包签名的验证，主要区别在于ipa唯一标识在原有Bundle Identifier的基础上增加了证书ID，也就说安装包和手机上已安装APP的Bundle Identifier即使一致，如果两者签名的证书ID不相同，那么安装包也无法正常安装。证书ID是什么？<br>
+<img src="http://ktwyuf.vanhorn-gd.diancloud.cn/content/images/2015/08/certifier-ID.png" alt="证书ID是什么" loading="lazy"><br>
+图中方框里字符串就是证书ID，升级后的ipa标识就是证书ID+BundleID，只有两者完全匹配，安装包才能覆盖安装，否则就会提示安装失败。解决办法就是卸载安装包，重新安装！</p>
+<blockquote>
+<p>The entitlements specified in your application’s Code Signing Entitlements file do not match those specified in your provisioning profile</p>
+</blockquote>
+<p>目前，重签名主要用于企业证书重签名个人证书发布的ipa包，包括各种助手及企业内测包的发布等。在重签名前，让我们先看看一个完整的ipa包有哪些与证书相关的东西！打开ipa包，会发现_CodeSignature和embedded.mobileprovision两个文件<br>
+<img src="http://ktwyuf.vanhorn-gd.diancloud.cn/content/images/2015/08/resign_file1.png" alt="CodeSignature和embedded.mobileprovision" loading="lazy"></p>
+<p>_CodeSignature，ipa包签名文件<br>
+embedded.mobileprovision，证书配置文件<br>
+因此，替换上面两个文件就解决了ipa重签名的主要问题。此外，代码签名探析文中还提到entitlements.plist授权文件，重签名时也需要处理。按照下图内容创建plist文件，输入相关信息。</p>
+<p>整个签名过程如下（文件路径自定义）</p>
+<ul>
+<li>S1. 解压ipa安装包</li>
+</ul>
+<pre><code>cp olinone.ipa olinone.zip
+</code></pre>
+<ul>
+<li>S2. 替换证书配置文件（文件名必须为embedded，不得自定义）</li>
+</ul>
+<pre><code>cp embedded.mobileprovision Payload/olinone.app
+</code></pre>
+<ul>
+<li>S3. 重签名（certifierName为重签名证书文件名，可以加证书ID后缀）</li>
+</ul>
+<pre><code>certifierName=&quot;#你的Distribution证书名称#&quot;
+codesign -f -s $certifierName  --entitlements entitlements.plist Payload/olinone.app
+</code></pre>
+<ul>
+<li>S4. 打包</li>
+</ul>
+<pre><code>zip -r olinone.ipa Payload
+</code></pre>
+<p><strong>很多人在重签名时会忽略第二步或者没有指定entitlements.plist，都会造成ipa包安装失败！</strong></p>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-    
-      <a href="https://blog.exgame.club/post/mysqlinstall/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://blog.exgame.club/post-images/mysqlinstall.png'">
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://blog.exgame.club/post/mysqlinstall/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">MySQL 安装配置</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-09-18 / 1 min read</div>
-    </div>
-  </section>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
-    
-      <a href="https://blog.exgame.club/post/golang/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://blog.exgame.club/post-images/golang.png'">
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://blog.exgame.club/tag/hd9TABiDb/">
+            <span class="flex-auto">Xcode</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://blog.exgame.club/tag/gg2gO_pOQ/">
+            <span class="flex-auto">iOS</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://blog.exgame.club/post/xcode7/">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  Xcode7 HTTP WARNING
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://blog.exgame.club/post/XXTEA/">
+                <h3 class="post-title">
+                  XXTEA加密算法在iOS中的运用
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://blog.exgame.club/post/golang/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Golang 技巧汇总</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-09-18 / 1 min read</div>
-    </div>
-  </section>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
-    
-      <a href="https://blog.exgame.club/post/nginx/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://blog.exgame.club/post-images/nginx.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://blog.exgame.club/post/nginx/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Nginx 1.14 </h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
         
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-09-18 / 2 min read</div>
-    </div>
-  </section>
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
-    
-      <a href="https://blog.exgame.club/post/supervisorgo/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://blog.exgame.club/post-images/supervisorgo.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://blog.exgame.club/post/supervisorgo/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Supervisor为Go守护进程</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'c1b428a49429b4dd4fb0',
+    clientSecret: 'b267566e7ec9f3d5996257cd8b77b45320be3bf3',
+    repo: 'xuanyi0627.github.io',
+    owner: 'xuanyi0627',
+    admin: ['xuanyi0627'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-09-18 / 2 min read</div>
-    </div>
-  </section>
-
-        <div class="pagination-container animated fadeIn">
-  
-  
-</div>
 
       </div>
     </div>
