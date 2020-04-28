@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-<title>Taro前置内容 - State和Props - Matrix</title>
+<title>获取当前月份有多少天以及获取日期各个组成部分 - Matrix</title>
 <meta name="description" content="业精于勤">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -130,38 +130,43 @@
                     <div class="col-12 col-lg-10">
                       <div class="layout-post-main m-right m-md-right">
                         <div class="layout-post-header">
-                          <h1 class="layout-post-title">Taro前置内容 - State和Props</h1>
+                          <h1 class="layout-post-title">获取当前月份有多少天以及获取日期各个组成部分</h1>
                           <div class="layout-post-meta">
                             <div class="item">
-                               <a href="https://blog.exgame.club/tag/OPtWzDUZb/" class="post--keyword"
-                                data-title="前端" data-type="post_tag" data-term-id="39">前端</a>
-                               <a href="https://blog.exgame.club/tag/9uPCqGGr5V/" class="post--keyword"
-                                data-title="react" data-type="post_tag" data-term-id="39">react</a>
-                               <a href="https://blog.exgame.club/tag/x9wW1CJG3b/" class="post--keyword"
-                                data-title="小程序" data-type="post_tag" data-term-id="39">小程序</a>
-                               <a href="https://blog.exgame.club/tag/yfoCCaxYTC/" class="post--keyword"
-                                data-title="taro" data-type="post_tag" data-term-id="39">taro</a>
+                               <a href="https://blog.exgame.club/tag/gg2gO_pOQ/" class="post--keyword"
+                                data-title="iOS" data-type="post_tag" data-term-id="39">iOS</a>
                               
                             </div>
                             <div class="item">
-                              <span>2019-10-22</span>
+                              <span>2017-09-12</span>
                             </div>
                           </div>
                         </div>
                         <div class="layout-post-content">
                           <div class="layout-post-item">
                             
-                            <p class="with-img"><img src="https://i.loli.net/2020/04/28/hOowl5FgMm2dev6.png"
-                                class="attachment-full size-full wp-post-image" alt="Taro前置内容 - State和Props" /></p>
-                            
-                            <p>1</p>
+                            <h3 id="获取当前月份有多少天">获取当前月份有多少天</h3>
+<pre><code class="language-objc">NSCalendar *calendar = [NSCalendarcurrentCalendar];
+NSRange range = [calendarrangeOfUnit:NSDayCalendarUnitinUnit:NSMonthCalendarUnitforDate:[NSDatedate]];
+NSUInteger numberOfDaysInMonth = range.length;
+</code></pre>
+<p>numberOfDaysInMonth 即为当月的天数。<br>
+更多用法查看NSCalendar， NSDateComponents帮助文档</p>
+<h3 id="获取当前年份和月份和天数">获取当前年份和月份和天数</h3>
+<pre><code class="language-objc">NSCalendar *calendar = [NSCalendar currentCalendar];
+unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
+NSDateComponents *components = [calendar components:unitFlags fromDate:[NSDate date]];
+NSInteger iCurYear = [components year];  //当前的年份
+NSInteger iCurMonth = [components month];  //当前的月份
+NSInteger iCurDay = [components day];  // 当前的号数
+</code></pre>
 
                           </div>
                         </div>
                         <div class="layout-post-social">
                           <div class="item reader">
-                            <div id="/post/tarojs-state-props/" class="leancloud-visitors view"
-                              data-flag-title="Taro前置内容 - State和Props">
+                            <div id="/post/calendar/" class="leancloud-visitors view"
+                              data-flag-title="获取当前月份有多少天以及获取日期各个组成部分">
                               <span class="post-meta-item-text">阅读 </span>
                               <span class="leancloud-visitors-count"></span>
                             </div>
@@ -170,6 +175,59 @@
 
                         <div class="layout-post-navigation">
                           <div class="navigation-list">
+                            
+                            <div class="post-card row">
+                              
+                              <div class="card-content col-8 col-md-9">
+                                <div class="card-body">
+                                  <div class="header">
+                                    <a href="https://blog.exgame.club/post/quadrant/" class="title">
+                                      <h4>四象限法则这样用</h4>
+                                    </a>
+                                  </div>
+                                  <div class="inner d-none d-sm-block">
+                                    <div class="abstract">
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="item"><span>上一篇</span></div>
+                                  <div class="item">2018-08-04</div>
+                                </div>
+                              </div>
+                              <div class="card-thumb col-4 col-md-3">
+                                <div class="thumb">
+                                  <a href="https://blog.exgame.club/post/quadrant/"
+                                    style="background-image: url('https://i.loli.net/2020/04/28/kKIn251xosifSgA.gif');"></a>
+                                </div>
+                              </div>
+                              
+                            </div>
+
+                            <div class="post-card row">
+                              
+                              <div class="card-content col-12">
+                                <div class="card-body">
+                                  <div class="header">
+                                    <a href="https://blog.exgame.club/post/mongodb-install-error/" class="title">
+                                      <h4>brew-安装-mongodb-时出错了</h4>
+                                    </a>
+                                  </div>
+                                  <div class="inner">
+                                    <div class="abstract">
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="item"><span>下一篇</span></div>
+                                  <div class="item">2017-02-21</div>
+                                </div>
+                              </div>
+                              
+                            </div>
+
                             
                           </div>
                         </div>
@@ -182,7 +240,19 @@
                     <div class="col-12 col-lg-2 d-none d-lg-block">
                       <div class="layout-post-sidebar">
                         <div class="layout-sidebar-item">
-                          
+                          <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%9C%88%E4%BB%BD%E6%9C%89%E5%A4%9A%E5%B0%91%E5%A4%A9">获取当前月份有多少天</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E5%B9%B4%E4%BB%BD%E5%92%8C%E6%9C%88%E4%BB%BD%E5%92%8C%E5%A4%A9%E6%95%B0">获取当前年份和月份和天数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
                         </div>
                       </div>
                     </div>
