@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-<title>Golang 技巧汇总 - Matrix</title>
+<title>SignUp VS Register | SignIn VS Login - Matrix</title>
 <meta name="description" content="业精于勤">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -130,52 +130,57 @@
                     <div class="col-12 col-lg-10">
                       <div class="layout-post-main m-right m-md-right">
                         <div class="layout-post-header">
-                          <h1 class="layout-post-title">Golang 技巧汇总</h1>
+                          <h1 class="layout-post-title">SignUp VS Register | SignIn VS Login</h1>
                           <div class="layout-post-meta">
                             <div class="item">
-                               <a href="https://blog.exgame.club/tag/6FfljOb5o/" class="post--keyword"
-                                data-title="develop" data-type="post_tag" data-term-id="39">develop</a>
-                               <a href="https://blog.exgame.club/tag/PZjmc1MYG0/" class="post--keyword"
-                                data-title="server" data-type="post_tag" data-term-id="39">server</a>
-                               <a href="https://blog.exgame.club/tag/zLd4aCp2Jj/" class="post--keyword"
-                                data-title="Go" data-type="post_tag" data-term-id="39">Go</a>
                               
                             </div>
                             <div class="item">
-                              <span>2019-09-18</span>
+                              <span>2019-02-21</span>
                             </div>
                           </div>
                         </div>
                         <div class="layout-post-content">
                           <div class="layout-post-item">
                             
-                            <p class="with-img"><img src="https://blog.exgame.club/post-images/golang.png"
-                                class="attachment-full size-full wp-post-image" alt="Golang 技巧汇总" /></p>
-                            
-                            <h3 id="交叉编译">交叉编译</h3>
-<pre><code>CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go install version_pro.go
-</code></pre>
-<h3 id="centos下载解压golang">CentOS下载解压Golang</h3>
-<pre><code>wget https://storage.googleapis.com/golang/go1.10.linux-amd64.tar.gz
-tar -zxvf go1.8.linux-amd64.tar.gz -C /usr/local
-</code></pre>
-<h3 id="配置环境">配置环境</h3>
-<pre><code>sudo vim /etc/profile
-
-export GOROOT=/usr/local/go 
-export GOPATH=/home/ubuntu/webgo
-export PATH=$GOROOT/bin:$PATH
-export GOBIN=/home/ubuntu/webgo/bin
-
-source /etc/profile
-</code></pre>
+                            <p>你知道这两组词的区别么？</p>
+<blockquote>
+<ul>
+<li>Sign in</li>
+<li>Log in</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Sign up</li>
+<li>Register</li>
+</ul>
+</blockquote>
+<p>宣匠来给你划重点了</p>
+<p>！！！敲黑板</p>
+<p>诶？你怎么不拿本记呢？</p>
+<p><a href="https://english.stackexchange.com/questions/211729/what-is-the-difference-between-log-in-sign-in-register-sign-up-log-out-sign">解释来源点这里</a></p>
+<ul>
+<li><strong>both login and sign in are the same as authenticate</strong><br>
+verb, to validate the user. Otherwise password are not required.</li>
+<li><strong>both logout and sign out are the same</strong></li>
+<li><strong>log in is to authenticate into a website that has different interface as guest</strong><br>
+You cannot use the logged in interface if you are a guest, e.g. Facebook</li>
+<li><strong>sign in is to authenticate into a website that has same interface as guest</strong><br>
+You can still use the website without signing in, e.g. Google</li>
+<li><strong>register is entering your information into the system for your account for serious thing</strong><br>
+You need to enter your information like name, address, contact number, etc for domain registration. Another example is company registration.</li>
+<li><strong>sign up is to create an account to use</strong><br>
+You only need to enter essential information like email, username, password, etc for a Facebook account.</li>
+</ul>
+<p>我不负责翻译，我只是重点的搬运工</p>
 
                           </div>
                         </div>
                         <div class="layout-post-social">
                           <div class="item reader">
-                            <div id="/post/golang/" class="leancloud-visitors view"
-                              data-flag-title="Golang 技巧汇总">
+                            <div id="/post/diffwithfourword/" class="leancloud-visitors view"
+                              data-flag-title="SignUp VS Register | SignIn VS Login">
                               <span class="post-meta-item-text">阅读 </span>
                               <span class="leancloud-visitors-count"></span>
                             </div>
@@ -190,8 +195,8 @@ source /etc/profile
                               <div class="card-content col-8 col-md-9">
                                 <div class="card-body">
                                   <div class="header">
-                                    <a href="https://blog.exgame.club/post/mysqlinstall/" class="title">
-                                      <h4>MySQL 安装配置</h4>
+                                    <a href="https://blog.exgame.club/post/supervisorgo/" class="title">
+                                      <h4>Supervisor为Go守护进程</h4>
                                     </a>
                                   </div>
                                   <div class="inner d-none d-sm-block">
@@ -207,8 +212,8 @@ source /etc/profile
                               </div>
                               <div class="card-thumb col-4 col-md-3">
                                 <div class="thumb">
-                                  <a href="https://blog.exgame.club/post/mysqlinstall/"
-                                    style="background-image: url('https://blog.exgame.club/post-images/mysqlinstall.png');"></a>
+                                  <a href="https://blog.exgame.club/post/supervisorgo/"
+                                    style="background-image: url('https://blog.exgame.club/post-images/supervisorgo.jpg');"></a>
                                 </div>
                               </div>
                               
@@ -219,8 +224,8 @@ source /etc/profile
                               <div class="card-content col-8 col-md-9">
                                 <div class="card-body">
                                   <div class="header">
-                                    <a href="https://blog.exgame.club/post/nginx/" class="title">
-                                      <h4>Nginx 1.14 </h4>
+                                    <a href="https://blog.exgame.club/post/quadrant/" class="title">
+                                      <h4>四象限法则这样用</h4>
                                     </a>
                                   </div>
                                   <div class="inner d-none d-sm-block">
@@ -231,13 +236,13 @@ source /etc/profile
                                 </div>
                                 <div class="card-footer">
                                   <div class="item"><span>下一篇</span></div>
-                                  <div class="item">2019-09-18</div>
+                                  <div class="item">2018-08-04</div>
                                 </div>
                               </div>
                               <div class="card-thumb col-4 col-md-3">
                                 <div class="thumb">
-                                  <a href="https://blog.exgame.club/post/nginx/"
-                                    style="background-image: url('https://blog.exgame.club/post-images/nginx.png');"></a>
+                                  <a href="https://blog.exgame.club/post/quadrant/"
+                                    style="background-image: url('https://i.loli.net/2020/04/28/kKIn251xosifSgA.gif');"></a>
                                 </div>
                               </div>
                               
@@ -255,20 +260,7 @@ source /etc/profile
                     <div class="col-12 col-lg-2 d-none d-lg-block">
                       <div class="layout-post-sidebar">
                         <div class="layout-sidebar-item">
-                          <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91">交叉编译</a></li>
-<li><a href="#centos%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%8E%8Bgolang">CentOS下载解压Golang</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83">配置环境</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
+                          
                         </div>
                       </div>
                     </div>
