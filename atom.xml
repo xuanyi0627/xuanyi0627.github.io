@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.exgame.club</id>
     <title>Matrix</title>
-    <updated>2020-01-15T01:33:06.906Z</updated>
+    <updated>2020-04-28T06:01:20.007Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.exgame.club"/>
     <link rel="self" href="https://blog.exgame.club/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, Matrix</rights>
     <entry>
         <title type="html"><![CDATA[画一个弧线的View]]></title>
-        <id>https://blog.exgame.club/post/ios-arc</id>
-        <link href="https://blog.exgame.club/post/ios-arc">
+        <id>https://blog.exgame.club/post/ios-arc/</id>
+        <link href="https://blog.exgame.club/post/ios-arc/">
         </link>
         <updated>2019-10-22T08:36:23.000Z</updated>
         <content type="html"><![CDATA[<p><a href="https://github.com/xuanyi0627/DrawArc">Github地址</a></p>
@@ -37,8 +37,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Taro前置内容 - 生命周期]]></title>
-        <id>https://blog.exgame.club/post/tarojs-life</id>
-        <link href="https://blog.exgame.club/post/tarojs-life">
+        <id>https://blog.exgame.club/post/tarojs-life/</id>
+        <link href="https://blog.exgame.club/post/tarojs-life/">
         </link>
         <updated>2019-10-18T08:00:30.000Z</updated>
         <content type="html"><![CDATA[<h3 id="前置技能">前置技能</h3>
@@ -147,8 +147,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Taro初相识]]></title>
-        <id>https://blog.exgame.club/post/tarojs-init</id>
-        <link href="https://blog.exgame.club/post/tarojs-init">
+        <id>https://blog.exgame.club/post/tarojs-init/</id>
+        <link href="https://blog.exgame.club/post/tarojs-init/">
         </link>
         <updated>2019-09-29T01:06:06.000Z</updated>
         <content type="html"><![CDATA[<h3 id="官网">官网</h3>
@@ -287,8 +287,8 @@ $ taro build --type rn --watch
     </entry>
     <entry>
         <title type="html"><![CDATA[MySQL 常用方法]]></title>
-        <id>https://blog.exgame.club/post/mysqlfunc</id>
-        <link href="https://blog.exgame.club/post/mysqlfunc">
+        <id>https://blog.exgame.club/post/mysqlfunc/</id>
+        <link href="https://blog.exgame.club/post/mysqlfunc/">
         </link>
         <updated>2019-09-18T08:41:19.000Z</updated>
         <content type="html"><![CDATA[<h3 id="转变表character">转变表CHARACTER</h3>
@@ -301,8 +301,8 @@ $ taro build --type rn --watch
     </entry>
     <entry>
         <title type="html"><![CDATA[MySQL 安装配置]]></title>
-        <id>https://blog.exgame.club/post/mysqlinstall</id>
-        <link href="https://blog.exgame.club/post/mysqlinstall">
+        <id>https://blog.exgame.club/post/mysqlinstall/</id>
+        <link href="https://blog.exgame.club/post/mysqlinstall/">
         </link>
         <updated>2019-09-18T08:35:59.000Z</updated>
         <content type="html"><![CDATA[<h3 id="系统">系统</h3>
@@ -344,8 +344,8 @@ set password for 'root'@'localhost' =password('8sIjjbzAxWSsC65A');
     </entry>
     <entry>
         <title type="html"><![CDATA[Golang 技巧汇总]]></title>
-        <id>https://blog.exgame.club/post/golang</id>
-        <link href="https://blog.exgame.club/post/golang">
+        <id>https://blog.exgame.club/post/golang/</id>
+        <link href="https://blog.exgame.club/post/golang/">
         </link>
         <updated>2019-09-18T08:30:51.000Z</updated>
         <content type="html"><![CDATA[<h3 id="交叉编译">交叉编译</h3>
@@ -369,8 +369,8 @@ source /etc/profile
     </entry>
     <entry>
         <title type="html"><![CDATA[Nginx 1.14 ]]></title>
-        <id>https://blog.exgame.club/post/nginx</id>
-        <link href="https://blog.exgame.club/post/nginx">
+        <id>https://blog.exgame.club/post/nginx/</id>
+        <link href="https://blog.exgame.club/post/nginx/">
         </link>
         <updated>2019-09-18T08:25:32.000Z</updated>
         <content type="html"><![CDATA[<h3 id="系统">系统</h3>
@@ -417,8 +417,8 @@ make install
     </entry>
     <entry>
         <title type="html"><![CDATA[Supervisor为Go守护进程]]></title>
-        <id>https://blog.exgame.club/post/supervisorgo</id>
-        <link href="https://blog.exgame.club/post/supervisorgo">
+        <id>https://blog.exgame.club/post/supervisorgo/</id>
+        <link href="https://blog.exgame.club/post/supervisorgo/">
         </link>
         <updated>2019-09-18T08:12:32.000Z</updated>
         <content type="html"><![CDATA[<h3 id="系统">系统</h3>
