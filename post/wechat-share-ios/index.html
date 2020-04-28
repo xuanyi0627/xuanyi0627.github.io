@@ -34,7 +34,32 @@
             文章目录
           </p>
           <div class="toc-container hidden lg:block">
-            
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E9%A6%96%E5%85%88%E6%8C%89%E7%85%A7%E5%BE%AE%E4%BF%A1ios-sdk%E6%8E%A5%E5%85%A5%E8%BF%99%E9%87%8C%E4%B8%8D%E5%86%8D%E5%8F%99%E8%BF%B0">首先按照微信iOS SDK接入，这里不再叙述。</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4">配置步骤：</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5">第一步：</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5">第二步：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
           </div>
         </div>
       
@@ -79,68 +104,116 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">写个`HelloWorld` - Node.js</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">iOS快速集成微信登录、分享</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-04-28 / 1 min read
+          2015-08-27 / 2 min read
         </div>
-        
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://upload-images.jianshu.io/upload_images/232251-0f0be5c9f2bd454f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
         
         <div class="post-content yue">
-          <p>这一篇来个Node.js的</p>
-<p>写代码之前一定要把Node.js装上哈！</p>
+          <p>写在前面：</p>
+<p>当前版本的不支持支付，后期会添加支付的方法。</p>
+<h5 id="首先按照微信ios-sdk接入这里不再叙述">首先按照微信iOS SDK接入，这里不再叙述。</h5>
+<blockquote>
+<p><a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=1417674108&amp;token=649eccbe860e9dc1a8a54d28ee6686bbe04540fd&amp;lang=zh_CN">微信SDK传送门</a></p>
+</blockquote>
+<h5 id="配置步骤">配置步骤：</h5>
+<h6 id="第一步">第一步：</h6>
+<figure data-type="image" tabindex="1"><img src="http://ktwyuf.vanhorn-gd.diancloud.cn/content/images/2015/08/wx_01.png" alt="配置URL Scheme" loading="lazy"></figure>
 <ul>
-<li>
-<p>新建一个文件<code>index.js</code></p>
-</li>
-<li>
-<p>打开这个文件，在里面写段代码</p>
-</li>
+<li>位置一：填写微信申请下来的AppId。</li>
+<li>位置二：填写一个你的App的唯一标示，1k以内的字符串即可。（如果有登录需求的须填写，没有的可忽略）</li>
 </ul>
-<pre><code>var module = require('http');
-module.createServer(function(req, resp) {
-  resp.writeHead(200, {'content-Type':'text/plain'});
-  resp.end('Hello World!');
-}).listen(9001)
+<h6 id="第二步">第二步：</h6>
+<figure data-type="image" tabindex="2"><img src="http://ktwyuf.vanhorn-gd.diancloud.cn/content/images/2015/08/wx_02.png" alt="配置微信信息" loading="lazy"></figure>
+<blockquote>
+<ul>
+<li>kTestWeiXinAppId:微信申请下来的AppId</li>
+<li>kTestWeiXinSecret:微信申请下来的AppSecret</li>
+<li>kTestSendState:与第一步位置二内容相同即可</li>
+</ul>
+</blockquote>
+<p>#####使用方式：</p>
+<ul>
+<li>AppDelegate.m</li>
+</ul>
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    [[Vendor_WeiXin sharedHandler] initWeiXin];
+    return YES;
+}
+</code></pre>
+<pre><code>#pragma mark - WeiXin
 
-console.log('Server is running on port over 9001');
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL isSuc = [WXApi handleOpenURL:url delegate:self];
+    NSLog(@&quot;url %@ isSuc %d&quot;,url,isSuc == YES ? 1 : 0);
+    //有登录需求的加上下面这句
+    [[Vendor_WeiXin sharedHandler] accessWXAuthProgress:url];
+    return  isSuc;
+}
 </code></pre>
-<ul>
-<li>
-<p>打开<code>terminal</code></p>
-</li>
-<li>
-<p><code>cd</code> 到那个文件所在文件夹</p>
-</li>
-<li>
-<p>然后键入,回车，你可以看到Server已经运行起来了</p>
-</li>
-</ul>
-<pre><code>node index.js
+<blockquote>
+<p>分享途径</p>
+</blockquote>
+<pre><code>typedef enum {
+    kShareTool_WeiXinFriends = 0, // 微信好友
+    kShareTool_WeiXinCircleFriends, // 微信朋友圈
+    kShareTool_WeiXinCollection, // 微信收藏
+} ShareToolType;
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="http://upload-images.jianshu.io/upload_images/232251-2c93df3769f02860.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="node运行起来了" loading="lazy"></figure>
-<ul>
-<li>
-<p>这个时候打开你的浏览器，在地址栏输入 <a href="http://localhost:9001">http://localhost:9001</a></p>
-</li>
-<li>
-<p><code>hello world !</code>出现了。</p>
-</li>
-</ul>
+<blockquote>
+<p>分享类型</p>
+</blockquote>
+<pre><code>typedef enum {
+    kShareMedia_WeiXinText = 0, //文字
+    kShareMedia_WeiXinImage, //图片
+    kShareMedia_WeiXinMusic, //音频
+    kShareMedia_WeiXinVideo, //视频
+    kShareMedia_WeiXinLink, //链接
+} ShareMediaType;
+</code></pre>
+<blockquote>
+<p>获取使用微信登录的用户在微信里的信息</p>
+</blockquote>
+<pre><code>@protocol Vendor_WeiXinDelegate &lt;NSObject&gt;
+
+-(void)getWeiXinLoginUserInfo:(WX_UserInfoModel *)userinfo;
+
+@end
+</code></pre>
 
         </div>
 
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://blog.exgame.club/tag/gg2gO_pOQ/">
+            <span class="flex-auto">iOS</span>
+          </a>
         
 
 
         <div class="flex justify-between py-8">
           
+            <div class="prev-post">
+              <a href="https://blog.exgame.club/post/xcode7/">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  Xcode7 HTTP WARNING
+                </h3>
+              </a>
+            </div>
+          
 
           
             <div class="next-post">
-              <a href="https://blog.exgame.club/post/wgLAFmJV0/">
+              <a href="https://blog.exgame.club/post/ipa/">
                 <h3 class="post-title">
-                  写个`HelloWorld` - PHP
+                  iOS证书及ipa包重签名探究
                   <i class="remixicon-arrow-right-line"></i>
                 </h3>
               </a>
