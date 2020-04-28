@@ -36,23 +36,17 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li>
+<li><a href="#uibutton">UIButton</a><br>
+*
 <ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E9%A6%96%E5%85%88%E6%8C%89%E7%85%A7%E5%BE%AE%E4%BF%A1ios-sdk%E6%8E%A5%E5%85%A5%E8%BF%99%E9%87%8C%E4%B8%8D%E5%86%8D%E5%8F%99%E8%BF%B0">首先按照微信iOS SDK接入，这里不再叙述。</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4">配置步骤：</a>
-<ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5">第一步：</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5">第二步：</a></li>
+<li><a href="#objective-c">Objective - C</a></li>
+<li><a href="#swift">Swift</a></li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#uilabel">UILabel</a><br>
+*
+<ul>
+<li><a href="#github%E5%9C%B0%E5%9D%80">Github地址：</a></li>
 </ul>
 </li>
 </ul>
@@ -103,92 +97,161 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">iOS快速集成微信登录、分享</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">UIButton或UILabel加个下划线</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2015-08-27 / 2 min read
+          2015-08-14 / 2 min read
         </div>
         
         <div class="post-content yue">
-          <p>写在前面：</p>
-<p>当前版本的不支持支付，后期会添加支付的方法。</p>
-<h5 id="首先按照微信ios-sdk接入这里不再叙述">首先按照微信iOS SDK接入，这里不再叙述。</h5>
-<blockquote>
-<p><a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=1417674108&amp;token=649eccbe860e9dc1a8a54d28ee6686bbe04540fd&amp;lang=zh_CN">微信SDK传送门</a></p>
-</blockquote>
-<h5 id="配置步骤">配置步骤：</h5>
-<h6 id="第一步">第一步：</h6>
-<figure data-type="image" tabindex="1"><img src="http://ktwyuf.vanhorn-gd.diancloud.cn/content/images/2015/08/wx_01.png" alt="配置URL Scheme" loading="lazy"></figure>
+          <h2 id="uibutton">UIButton</h2>
+<h4 id="objective-c">Objective - C</h4>
 <ul>
-<li>位置一：填写微信申请下来的AppId。</li>
-<li>位置二：填写一个你的App的唯一标示，1k以内的字符串即可。（如果有登录需求的须填写，没有的可忽略）</li>
+<li>LXYHyperlinksButton.h</li>
 </ul>
-<h6 id="第二步">第二步：</h6>
-<figure data-type="image" tabindex="2"><img src="http://ktwyuf.vanhorn-gd.diancloud.cn/content/images/2015/08/wx_02.png" alt="配置微信信息" loading="lazy"></figure>
-<blockquote>
-<ul>
-<li>kTestWeiXinAppId:微信申请下来的AppId</li>
-<li>kTestWeiXinSecret:微信申请下来的AppSecret</li>
-<li>kTestSendState:与第一步位置二内容相同即可</li>
-</ul>
-</blockquote>
-<p>#####使用方式：</p>
-<ul>
-<li>AppDelegate.m</li>
-</ul>
-<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    [[Vendor_WeiXin sharedHandler] initWeiXin];
-    return YES;
-}
-</code></pre>
-<pre><code>#pragma mark - WeiXin
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+<pre><code>@interface LXYHyperlinksButton : UIButton
 {
-    return  [WXApi handleOpenURL:url delegate:self];
+    UIColor *lineColor;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+-(void)setColor:(UIColor*)color;
+</code></pre>
+<ul>
+<li>LXYHyperlinksButton.m</li>
+</ul>
+<pre><code>#import &quot;LXYHyperlinksButton.h&quot;
+
+@implementation LXYHyperlinksButton
+
+- (id)initWithFrame:(CGRect)frame
 {
-    BOOL isSuc = [WXApi handleOpenURL:url delegate:self];
-    NSLog(@&quot;url %@ isSuc %d&quot;,url,isSuc == YES ? 1 : 0);
-    //有登录需求的加上下面这句
-    [[Vendor_WeiXin sharedHandler] accessWXAuthProgress:url];
-    return  isSuc;
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+    }
+    return self;
 }
-</code></pre>
-<blockquote>
-<p>分享途径</p>
-</blockquote>
-<pre><code>typedef enum {
-    kShareTool_WeiXinFriends = 0, // 微信好友
-    kShareTool_WeiXinCircleFriends, // 微信朋友圈
-    kShareTool_WeiXinCollection, // 微信收藏
-} ShareToolType;
-</code></pre>
-<blockquote>
-<p>分享类型</p>
-</blockquote>
-<pre><code>typedef enum {
-    kShareMedia_WeiXinText = 0, //文字
-    kShareMedia_WeiXinImage, //图片
-    kShareMedia_WeiXinMusic, //音频
-    kShareMedia_WeiXinVideo, //视频
-    kShareMedia_WeiXinLink, //链接
-} ShareMediaType;
-</code></pre>
-<blockquote>
-<p>获取使用微信登录的用户在微信里的信息</p>
-</blockquote>
-<pre><code>@protocol Vendor_WeiXinDelegate &lt;NSObject&gt;
 
--(void)getWeiXinLoginUserInfo:(WX_UserInfoModel *)userinfo;
+-(void)setColor:(UIColor *)color{
+    lineColor = [color copy];
+    [self setNeedsDisplay];
+}
+
+
+- (void) drawRect:(CGRect)rect {
+    CGRect textRect = self.titleLabel.frame;
+    CGContextRef contextRef = UIGraphicsGetCurrentContext();
+    
+    CGFloat descender = self.titleLabel.font.descender;
+    if([lineColor isKindOfClass:[UIColor class]]){
+        CGContextSetStrokeColorWithColor(contextRef, lineColor.CGColor);
+    }
+    
+    CGContextMoveToPoint(contextRef, textRect.origin.x, textRect.origin.y + textRect.size.height + descender+1);
+    CGContextAddLineToPoint(contextRef, textRect.origin.x + textRect.size.width, textRect.origin.y + textRect.size.height + descender+1);
+    
+    CGContextClosePath(contextRef);
+    CGContextDrawPath(contextRef, kCGPathStroke);
+}
 
 @end
+
 </code></pre>
+<hr>
+<h4 id="swift">Swift</h4>
+<ul>
+<li>LXYHyperlinksButton.swift</li>
+</ul>
+<pre><code>import UIKit
+
+class LXYHyperlinksButton: UIButton {
+    
+    var lineColor: UIColor!
+    
+    internal func setColor(color:UIColor) {
+        if lineColor == nil {
+            lineColor = UIColor.whiteColor()
+        }
+        lineColor = color.copy() as! UIColor
+        self.setNeedsDisplay()
+    }
+    
+    override func drawRect(rect: CGRect) {
+        let textRect: CGRect = self.titleLabel!.frame
+        let contextRef: CGContextRef = UIGraphicsGetCurrentContext()!
+        let descender: CGFloat = self.titleLabel!.font.descender
+        if lineColor.isKindOfClass(UIColor) {
+            CGContextSetStrokeColorWithColor(contextRef, lineColor.CGColor)
+        }
+        CGContextMoveToPoint(contextRef, textRect.origin.x, textRect.origin.y + textRect.size.height + descender + 1)
+        CGContextAddLineToPoint(contextRef, textRect.origin.x + textRect.size.width, textRect.origin.y + textRect.size.height + descender + 1)
+        CGContextClosePath(contextRef)
+        CGContextDrawPath(contextRef, .Stroke)
+    }
+
+}
+</code></pre>
+<hr>
+<h2 id="uilabel">UILabel</h2>
+<ul>
+<li>LXYHyperlinksLabel.h</li>
+</ul>
+<pre><code>@interface LXYHyperlinksLabel : UILabel
+{
+    UIColor *lineColor;
+}
+
+-(void)setColor:(UIColor*)color;
+</code></pre>
+<ul>
+<li>LXYHyperlinksLabel.m</li>
+</ul>
+<pre><code>#import &quot;LXYHyperlinksLabel.h&quot;
+
+@implementation LXYHyperlinksLabel
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+    }
+    return self;
+}
+
+-(void)setColor:(UIColor *)color{
+    lineColor = [color copy];
+    [self setNeedsDisplay];
+}
+
+
+- (void) drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    CGRect textRect = self.frame;
+    CGContextRef contextRef = UIGraphicsGetCurrentContext();
+    
+    CGFloat descender = self.font.descender;
+    if([lineColor isKindOfClass:[UIColor class]]){
+        CGContextSetStrokeColorWithColor(contextRef, lineColor.CGColor);
+    }
+    
+    CGContextMoveToPoint(contextRef, descender+1, textRect.size.height + descender+1);
+    CGContextAddLineToPoint(contextRef, textRect.size.width, textRect.size.height + descender+1);
+    CGContextClosePath(contextRef);
+    CGContextDrawPath(contextRef, kCGPathStroke);
+}
+
+@end
+
+</code></pre>
+<h4 id="github地址">Github地址：</h4>
+<p><a href="https://github.com/xuanyi0627/LXYHyperlinks.git">https://github.com/xuanyi0627/LXYHyperlinks.git</a></p>
 
         </div>
 
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://blog.exgame.club/tag/pQ0AY0UD2/">
+            <span class="flex-auto">swift</span>
+          </a>
         
           <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://blog.exgame.club/tag/gg2gO_pOQ/">
             <span class="flex-auto">iOS</span>
@@ -199,10 +262,10 @@
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://blog.exgame.club/post/xcode7/">
+              <a href="https://blog.exgame.club/post/W7RZSK4LP/">
                 <h3 class="post-title">
                   <i class="ri-arrow-left-line"></i>
-                  Xcode7 HTTP WARNING
+                  制作一个渐变色的进度条
                 </h3>
               </a>
             </div>
@@ -210,9 +273,9 @@
 
           
             <div class="next-post">
-              <a href="https://blog.exgame.club/post/ipa/">
+              <a href="https://blog.exgame.club/post/CRC32/">
                 <h3 class="post-title">
-                  iOS证书及ipa包重签名探究
+                  CRC32位校验在iOS中的使用方法
                   <i class="ri-arrow-right-line"></i>
                 </h3>
               </a>
