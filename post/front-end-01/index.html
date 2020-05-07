@@ -33,7 +33,20 @@
             文章目录
           </p>
           <div class="toc-container hidden lg:block">
-            
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%88%9D%E4%BD%93%E9%AA%8C">初体验</a></li>
+<li><a href="#%E4%BB%8E%E5%A4%B4%E5%86%8D%E6%9D%A5">从头再来</a></li>
+<li><a href="#%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF">学习之路</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
           </div>
         </div>
       
@@ -78,74 +91,45 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">输入框在手机号上的特殊处理</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">「前端自学成才」小话前端技术栈</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2017-09-12 / 1 min read
+          2020-05-07 / 2 min read
         </div>
         
         <div class="post-content yue">
-          <p>有时候需求需要我们把手机号码在输入时做特殊处理，比如这样</p>
-<figure data-type="image" tabindex="1"><img src="http://upload-images.jianshu.io/upload_images/232251-aad8c797037115ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" loading="lazy"></figure>
-<pre><code class="language-swift">extension String {
-    func formatPhoneNumberWithOriginalPhoneNumber() -&gt; String {
-        var text = self
-        if text.contains(&quot; &quot;)  {
-            text = text.replacingOccurrences(of: &quot; &quot;, with: &quot;&quot;)
-        }
-        var res = text
-        if text.length &gt; 3 {
-            res.insert(&quot; &quot;, at: text.index(text.startIndex, offsetBy: 3))
-            if text.length &gt;= 9 {
-                res.insert(&quot; &quot;, at: res.index(text.startIndex, offsetBy: 8))
-            }
-        }
-        
-        return res
-    }
-}
-</code></pre>
-<p><strong>！！！敲黑板，划重点</strong></p>
-<p>以下这段不是<code>UITextFieldDelegate</code></p>
-<p>它是给你的输入框添加的事件，当然你也可以用监听</p>
+          <p>随着iOS、Android的应用逐渐被小程序、H5替代的趋势，作为一名有着7年iOS开发经验的小学生不禁对前端开发产生了兴趣。随着Flutter的出现，貌似现在前端开发成了潮流。我想要通过一个iOS开发者的角度，来说一下我自学前端的过程。</p>
+<h3 id="初体验">初体验</h3>
+<p>第一次接触HTML开发是在大学的时候，09年，还在用网页开发三剑客，<code>Dreamweaver</code>，<code>Firework</code>，<code>Flash</code>。那个时候也是我喜欢上前端开发的开始。</p>
+<p>不同于后台开发，前端开发给大家的是及时呈现的状态，每当你写完一个页面或者一个动画、一个交互，都会给你及时满足。所以相对于那时候死气沉沉的C语言、汇编，前端开发的课就变得特别有意思。当然那时候的前端作业也是最费时间的，因为开始的时候做不好。后来，通过学习，能把老师给的样图一模一样的用HTML和CSS呈现出来。</p>
+<p>记得前端老师说的一句话：</p>
 <blockquote>
-<pre><code class="language-swift">textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-</code></pre>
+<p>做前端开发，就是要一个像素一个像素的扣，一点偏差都不行。</p>
 </blockquote>
-<pre><code class="language-swift">func textFieldDidChange(_ textField: UITextField) {
-    if let text = textField.text {
-        if phoneTextField == textField {
-            phoneTextField.text = text.formatPhoneNumberWithOriginalPhoneNumber()
-        }
-    }
-}
-</code></pre>
+<p>这句话我记到了现在，也做到了现在。</p>
+<h3 id="从头再来">从头再来</h3>
+<p>在入职第一家公司的时候，面试的职位自然也是前端开发工程师，但是入职后被调去做了iOS，从iOS4做到现在的iOS13，在这个过程中，我并没有过多的关注前端的事情，直到<code>React Native</code>的出现，它似乎在挑战原生开发。这引起了我的注意和兴趣，于是我开始了自学前端开发。</p>
+<h3 id="学习之路">学习之路</h3>
+<p>前面的思维导图是我认为用得到的前端知识框架和我的学习路径，如果想学习前端的同学可以按照这个顺序去学习，也可以根据自己的喜欢和需要自行学习。</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/05/07/dns2BKOZp4JVty1.png" alt="知识框架和学习路径" loading="lazy"></figure>
+<p>后面的文章我也将记录我学习的笔记和坑。</p>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://blog.exgame.club/tag/gg2gO_pOQ/">
-            <span class="flex-auto">iOS</span>
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://blog.exgame.club/tag/OPtWzDUZb/">
+            <span class="flex-auto">前端</span>
           </a>
         
 
 
         <div class="flex justify-between py-8">
           
-            <div class="prev-post">
-              <a href="https://blog.exgame.club/post/maccreatephp/">
-                <h3 class="post-title">
-                  <i class="ri-arrow-left-line"></i>
-                  在MacOS上第一次搭建PHP环境
-                </h3>
-              </a>
-            </div>
-          
 
           
             <div class="next-post">
-              <a href="https://blog.exgame.club/post/calendar/">
+              <a href="https://blog.exgame.club/post/ios-arc/">
                 <h3 class="post-title">
-                  获取当前月份有多少天以及获取日期各个组成部分
+                  画一个弧线的View
                   <i class="ri-arrow-right-line"></i>
                 </h3>
               </a>
