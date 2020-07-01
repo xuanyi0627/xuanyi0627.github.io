@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.exgame.xyz</id>
+    <id>https://blog.exgame.top</id>
     <title>Matrix</title>
-    <updated>2020-06-30T09:19:30.527Z</updated>
+    <updated>2020-07-01T01:04:56.466Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.exgame.xyz"/>
-    <link rel="self" href="https://blog.exgame.xyz/atom.xml"/>
+    <link rel="alternate" href="https://blog.exgame.top"/>
+    <link rel="self" href="https://blog.exgame.top/atom.xml"/>
     <subtitle>思维方式决定了编程习惯&lt;br/&gt;
 编程习惯奠定了工程质量&lt;br/&gt;
 工程质量划定了能力边界</subtitle>
-    <logo>https://blog.exgame.xyz/images/avatar.png</logo>
-    <icon>https://blog.exgame.xyz/favicon.ico</icon>
+    <logo>https://blog.exgame.top/images/avatar.png</logo>
+    <icon>https://blog.exgame.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Matrix</rights>
     <entry>
         <title type="html"><![CDATA[「前端自学成才」小话前端技术栈]]></title>
-        <id>https://blog.exgame.xyz/post/front-end-01/</id>
-        <link href="https://blog.exgame.xyz/post/front-end-01/">
+        <id>https://blog.exgame.top/post/front-end-01/</id>
+        <link href="https://blog.exgame.top/post/front-end-01/">
         </link>
         <updated>2020-05-07T02:11:09.000Z</updated>
         <content type="html"><![CDATA[<p>随着iOS、Android的应用逐渐被小程序、H5替代的趋势，作为一名有着7年iOS开发经验的小学生不禁对前端开发产生了兴趣。随着Flutter的出现，貌似现在前端开发成了潮流。我想要通过一个iOS开发者的角度，来说一下我自学前端的过程。</p>
@@ -37,8 +37,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[画一个弧线的View]]></title>
-        <id>https://blog.exgame.xyz/post/ios-arc/</id>
-        <link href="https://blog.exgame.xyz/post/ios-arc/">
+        <id>https://blog.exgame.top/post/ios-arc/</id>
+        <link href="https://blog.exgame.top/post/ios-arc/">
         </link>
         <updated>2019-10-22T08:36:23.000Z</updated>
         <content type="html"><![CDATA[<p><a href="https://github.com/xuanyi0627/DrawArc">Github地址</a></p>
@@ -62,8 +62,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Taro前置内容 - 生命周期]]></title>
-        <id>https://blog.exgame.xyz/post/tarojs-life/</id>
-        <link href="https://blog.exgame.xyz/post/tarojs-life/">
+        <id>https://blog.exgame.top/post/tarojs-life/</id>
+        <link href="https://blog.exgame.top/post/tarojs-life/">
         </link>
         <updated>2019-10-18T08:00:30.000Z</updated>
         <content type="html"><![CDATA[<h3 id="前置技能">前置技能</h3>
@@ -172,8 +172,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Taro初相识]]></title>
-        <id>https://blog.exgame.xyz/post/tarojs-init/</id>
-        <link href="https://blog.exgame.xyz/post/tarojs-init/">
+        <id>https://blog.exgame.top/post/tarojs-init/</id>
+        <link href="https://blog.exgame.top/post/tarojs-init/">
         </link>
         <updated>2019-09-29T01:06:06.000Z</updated>
         <content type="html"><![CDATA[<h3 id="官网">官网</h3>
@@ -312,8 +312,8 @@ $ taro build --type rn --watch
     </entry>
     <entry>
         <title type="html"><![CDATA[MySQL 常用方法]]></title>
-        <id>https://blog.exgame.xyz/post/mysqlfunc/</id>
-        <link href="https://blog.exgame.xyz/post/mysqlfunc/">
+        <id>https://blog.exgame.top/post/mysqlfunc/</id>
+        <link href="https://blog.exgame.top/post/mysqlfunc/">
         </link>
         <updated>2019-09-18T08:41:19.000Z</updated>
         <content type="html"><![CDATA[<h3 id="转变表character">转变表CHARACTER</h3>
@@ -326,8 +326,8 @@ $ taro build --type rn --watch
     </entry>
     <entry>
         <title type="html"><![CDATA[MySQL 安装配置]]></title>
-        <id>https://blog.exgame.xyz/post/mysqlinstall/</id>
-        <link href="https://blog.exgame.xyz/post/mysqlinstall/">
+        <id>https://blog.exgame.top/post/mysqlinstall/</id>
+        <link href="https://blog.exgame.top/post/mysqlinstall/">
         </link>
         <updated>2019-09-18T08:35:59.000Z</updated>
         <content type="html"><![CDATA[<h3 id="系统">系统</h3>
@@ -369,8 +369,8 @@ set password for 'root'@'localhost' =password('8sIjjbzAxWSsC65A');
     </entry>
     <entry>
         <title type="html"><![CDATA[Golang 技巧汇总]]></title>
-        <id>https://blog.exgame.xyz/post/golang/</id>
-        <link href="https://blog.exgame.xyz/post/golang/">
+        <id>https://blog.exgame.top/post/golang/</id>
+        <link href="https://blog.exgame.top/post/golang/">
         </link>
         <updated>2019-09-18T08:30:51.000Z</updated>
         <content type="html"><![CDATA[<h3 id="交叉编译">交叉编译</h3>
@@ -394,8 +394,8 @@ source /etc/profile
     </entry>
     <entry>
         <title type="html"><![CDATA[Nginx 1.14 ]]></title>
-        <id>https://blog.exgame.xyz/post/nginx/</id>
-        <link href="https://blog.exgame.xyz/post/nginx/">
+        <id>https://blog.exgame.top/post/nginx/</id>
+        <link href="https://blog.exgame.top/post/nginx/">
         </link>
         <updated>2019-09-18T08:25:32.000Z</updated>
         <content type="html"><![CDATA[<h3 id="系统">系统</h3>
@@ -442,8 +442,8 @@ make install
     </entry>
     <entry>
         <title type="html"><![CDATA[Supervisor为Go守护进程]]></title>
-        <id>https://blog.exgame.xyz/post/supervisorgo/</id>
-        <link href="https://blog.exgame.xyz/post/supervisorgo/">
+        <id>https://blog.exgame.top/post/supervisorgo/</id>
+        <link href="https://blog.exgame.top/post/supervisorgo/">
         </link>
         <updated>2019-09-18T08:12:32.000Z</updated>
         <content type="html"><![CDATA[<h3 id="系统">系统</h3>
@@ -518,8 +518,8 @@ stderr_capture_maxbytes=1MB
     </entry>
     <entry>
         <title type="html"><![CDATA[SignUp VS Register | SignIn VS Login]]></title>
-        <id>https://blog.exgame.xyz/post/diffwithfourword/</id>
-        <link href="https://blog.exgame.xyz/post/diffwithfourword/">
+        <id>https://blog.exgame.top/post/diffwithfourword/</id>
+        <link href="https://blog.exgame.top/post/diffwithfourword/">
         </link>
         <updated>2019-02-21T08:13:36.000Z</updated>
         <content type="html"><![CDATA[<p>你知道这两组词的区别么？</p>
