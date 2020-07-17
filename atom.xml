@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.exgame.top</id>
     <title>Matrix</title>
-    <updated>2020-07-01T01:52:17.918Z</updated>
+    <updated>2020-07-17T02:41:44.906Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.exgame.top"/>
     <link rel="self" href="https://blog.exgame.top/atom.xml"/>
@@ -12,6 +12,65 @@
     <logo>https://blog.exgame.top/images/avatar.png</logo>
     <icon>https://blog.exgame.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Matrix</rights>
+    <entry>
+        <title type="html"><![CDATA[Nginx 1.18 ]]></title>
+        <id>https://blog.exgame.top/post/Jk-Klpm9t/</id>
+        <link href="https://blog.exgame.top/post/Jk-Klpm9t/">
+        </link>
+        <updated>2020-07-17T02:35:01.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="系统">系统</h3>
+<blockquote>
+<p>CentOS7.x</p>
+</blockquote>
+<h3 id="准备工作">准备工作</h3>
+<p>创建文件<code>nginx.repo</code>，将文件放置在 <code>/etc/yum.repos.d</code> 下</p>
+<pre><code>[nginx-stable]
+name=nginx stable repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
+ 
+[nginx-mainline]
+name=nginx mainline repo
+baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
+</code></pre>
+<h3 id="安装nginx">安装Nginx</h3>
+<pre><code>sudo yum install nginx
+</code></pre>
+<h3 id="运行-nginx-的方式直接执行可执行文件">运行 Nginx 的方式，直接执行可执行文件</h3>
+<pre><code>nginx
+</code></pre>
+<h3 id="常用命令">常用命令</h3>
+<ul>
+<li>查看版本</li>
+</ul>
+<pre><code>nginx -v
+</code></pre>
+<ul>
+<li>其他常用指令</li>
+</ul>
+<pre><code>nginx -s &lt;信号&gt;
+</code></pre>
+<blockquote>
+<p>信号可以是<br>
+stop：快速关机<br>
+quit：正常关机<br>
+reload：重新加载配置文件<br>
+reopen：重新打开日志文件</p>
+</blockquote>
+<ul>
+<li>检查配置文件是否正确</li>
+</ul>
+<pre><code>nginx -t
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[「前端自学成才」小话前端技术栈]]></title>
         <id>https://blog.exgame.top/post/front-end-01/</id>
@@ -514,45 +573,6 @@ stderr_logfile_maxbytes=1MB
 stderr_logfile_backups=10
 stderr_capture_maxbytes=1MB
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SignUp VS Register | SignIn VS Login]]></title>
-        <id>https://blog.exgame.top/post/diffwithfourword/</id>
-        <link href="https://blog.exgame.top/post/diffwithfourword/">
-        </link>
-        <updated>2019-02-21T08:13:36.000Z</updated>
-        <content type="html"><![CDATA[<p>你知道这两组词的区别么？</p>
-<blockquote>
-<ul>
-<li>Sign in</li>
-<li>Log in</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>Sign up</li>
-<li>Register</li>
-</ul>
-</blockquote>
-<p>宣匠来给你划重点了</p>
-<p>！！！敲黑板</p>
-<p>诶？你怎么不拿本记呢？</p>
-<p><a href="https://english.stackexchange.com/questions/211729/what-is-the-difference-between-log-in-sign-in-register-sign-up-log-out-sign">解释来源点这里</a></p>
-<ul>
-<li><strong>both login and sign in are the same as authenticate</strong><br>
-verb, to validate the user. Otherwise password are not required.</li>
-<li><strong>both logout and sign out are the same</strong></li>
-<li><strong>log in is to authenticate into a website that has different interface as guest</strong><br>
-You cannot use the logged in interface if you are a guest, e.g. Facebook</li>
-<li><strong>sign in is to authenticate into a website that has same interface as guest</strong><br>
-You can still use the website without signing in, e.g. Google</li>
-<li><strong>register is entering your information into the system for your account for serious thing</strong><br>
-You need to enter your information like name, address, contact number, etc for domain registration. Another example is company registration.</li>
-<li><strong>sign up is to create an account to use</strong><br>
-You only need to enter essential information like email, username, password, etc for a Facebook account.</li>
-</ul>
-<p>我不负责翻译，我只是重点的搬运工</p>
 ]]></content>
     </entry>
 </feed>
